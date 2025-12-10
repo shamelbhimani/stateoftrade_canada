@@ -1,0 +1,881 @@
+﻿Title,Date,Imports,Exports
+Total of all industries,January 2024,27163781058,45645601453
+Total of all industries,February 2024,29318002270,44318378894
+Total of all industries,March 2024,31605977955,46221995762
+Total of all industries,April 2024,32177148494,47250491098
+Total of all industries,May 2024,31638072891,49136968472
+Total of all industries,June 2024,31248953748,47899791082
+Total of all industries,July 2024,28645189093,50092636289
+Total of all industries,August 2024,31032753279,45198919239
+Total of all industries,September 2024,29812165918,47129812044
+Total of all industries,October 2024,31170415216,48048118505
+Total of all industries,November 2024,30783982329,47489155943
+Total of all industries,December 2024,26817634872,50675141402
+Total of all industries,January 2025,29598313231,55908040256
+Total of all industries,February 2025,30936981072,50034172510
+Total of all industries,March 2025,35356541545,50983671295
+Total of all industries,April 2025,27369171856,40475147759
+Total of all industries,May 2025,28512158383,41076687259
+Total of all industries,June 2025,30017474225,40622297426
+Total of all industries,July 2025,27829762389,44002966736
+Total of all industries,August 2025,27692708913,40483690303
+"Agriculture, forestry, fishing and hunting",January 2024,712579316,1047921255
+"Agriculture, forestry, fishing and hunting",February 2024,714814015,1148012401
+"Agriculture, forestry, fishing and hunting",March 2024,850937346,1254707320
+"Agriculture, forestry, fishing and hunting",April 2024,818529207,1376071552
+"Agriculture, forestry, fishing and hunting",May 2024,999652306,1355939202
+"Agriculture, forestry, fishing and hunting",June 2024,930024408,1247226172
+"Agriculture, forestry, fishing and hunting",July 2024,895130715,1336053861
+"Agriculture, forestry, fishing and hunting",August 2024,871827332,1264909963
+"Agriculture, forestry, fishing and hunting",September 2024,852541660,1315603797
+"Agriculture, forestry, fishing and hunting",October 2024,955591745,1397376575
+"Agriculture, forestry, fishing and hunting",November 2024,911459683,1280041644
+"Agriculture, forestry, fishing and hunting",December 2024,769905585,1241685601
+"Agriculture, forestry, fishing and hunting",January 2025,830978347,1461259475
+"Agriculture, forestry, fishing and hunting",February 2025,757444690,1251904340
+"Agriculture, forestry, fishing and hunting",March 2025,831498745,1458668750
+"Agriculture, forestry, fishing and hunting",April 2025,662490761,1065528605
+"Agriculture, forestry, fishing and hunting",May 2025,843432414,1189579070
+"Agriculture, forestry, fishing and hunting",June 2025,861270441,1224821681
+"Agriculture, forestry, fishing and hunting",July 2025,861288493,1400727538
+"Agriculture, forestry, fishing and hunting",August 2025,799208061,1270901767
+Crop production,January 2024,538697879,655439445
+Crop production,February 2024,520562169,668244679
+Crop production,March 2024,639545656,734269469
+Crop production,April 2024,636904689,800971302
+Crop production,May 2024,788231234,817401388
+Crop production,June 2024,733214470,735425486
+Crop production,July 2024,663984943,867063418
+Crop production,August 2024,598359215,884531776
+Crop production,September 2024,555335467,883670907
+Crop production,October 2024,590370301,923794444
+Crop production,November 2024,575873290,829168015
+Crop production,December 2024,504962270,762176133
+Crop production,January 2025,518718642,867374163
+Crop production,February 2025,456287776,690008289
+Crop production,March 2025,551273064,815751374
+Crop production,April 2025,452242109,703587902
+Crop production,May 2025,618270607,770928749
+Crop production,June 2025,662915076,701796573
+Crop production,July 2025,628175048,905460542
+Crop production,August 2025,505819182,848510547
+Animal production and aquaculture,January 2024,71559988,286830882
+Animal production and aquaculture,February 2024,87339241,370538287
+Animal production and aquaculture,March 2024,107552104,428692647
+Animal production and aquaculture,April 2024,90219774,465984844
+Animal production and aquaculture,May 2024,119274461,380801155
+Animal production and aquaculture,June 2024,95372577,334352868
+Animal production and aquaculture,July 2024,95021703,343968055
+Animal production and aquaculture,August 2024,116347624,279123346
+Animal production and aquaculture,September 2024,131342139,346068311
+Animal production and aquaculture,October 2024,155922262,395807278
+Animal production and aquaculture,November 2024,137529957,352664649
+Animal production and aquaculture,December 2024,120590777,367521906
+Animal production and aquaculture,January 2025,169987455,470758086
+Animal production and aquaculture,February 2025,195498086,467000584
+Animal production and aquaculture,March 2025,135427651,538242630
+Animal production and aquaculture,April 2025,113586001,268541123
+Animal production and aquaculture,May 2025,138119115,275067702
+Animal production and aquaculture,June 2025,97118567,339160919
+Animal production and aquaculture,July 2025,97103768,344051897
+Animal production and aquaculture,August 2025,108279964,310510358
+Forestry and logging,January 2024,44750891,16376479
+Forestry and logging,February 2024,48034468,17031375
+Forestry and logging,March 2024,35600794,12336830
+Forestry and logging,April 2024,29076570,19042106
+Forestry and logging,May 2024,29539140,17229712
+Forestry and logging,June 2024,33843666,18011360
+Forestry and logging,July 2024,26781033,22414118
+Forestry and logging,August 2024,32153931,17778538
+Forestry and logging,September 2024,33706079,20134212
+Forestry and logging,October 2024,36628856,21826262
+Forestry and logging,November 2024,32571770,46474251
+Forestry and logging,December 2024,31538505,16144471
+Forestry and logging,January 2025,46721645,19292611
+Forestry and logging,February 2025,40507539,19503533
+Forestry and logging,March 2025,39141728,26666420
+Forestry and logging,April 2025,24351093,17528113
+Forestry and logging,May 2025,21470677,14432516
+Forestry and logging,June 2025,28874148,21533849
+Forestry and logging,July 2025,29152178,17290807
+Forestry and logging,August 2025,37050867,13717710
+"Fishing, hunting and trapping",January 2024,12593127,81841315
+"Fishing, hunting and trapping",February 2024,9217255,87742206
+"Fishing, hunting and trapping",March 2024,11159357,74129967
+"Fishing, hunting and trapping",April 2024,14036653,84202497
+"Fishing, hunting and trapping",May 2024,16804941,135202351
+"Fishing, hunting and trapping",June 2024,21464322,153640701
+"Fishing, hunting and trapping",July 2024,67829697,96922804
+"Fishing, hunting and trapping",August 2024,82104008,78207693
+"Fishing, hunting and trapping",September 2024,88282731,58686340
+"Fishing, hunting and trapping",October 2024,105984193,51369574
+"Fishing, hunting and trapping",November 2024,64176411,45198211
+"Fishing, hunting and trapping",December 2024,30556015,89640152
+"Fishing, hunting and trapping",January 2025,11548529,96673161
+"Fishing, hunting and trapping",February 2025,9352485,66363225
+"Fishing, hunting and trapping",March 2025,10753606,69314182
+"Fishing, hunting and trapping",April 2025,13261746,70433181
+"Fishing, hunting and trapping",May 2025,17726031,123853306
+"Fishing, hunting and trapping",June 2025,22426182,154429323
+"Fishing, hunting and trapping",July 2025,59146230,128473544
+"Fishing, hunting and trapping",August 2025,92046480,93348930
+Support activities for agriculture and forestry,January 2024,44977431,7433134
+Support activities for agriculture and forestry,February 2024,49660882,4455854
+Support activities for agriculture and forestry,March 2024,57079435,5278407
+Support activities for agriculture and forestry,April 2024,48291521,5870803
+Support activities for agriculture and forestry,May 2024,45802530,5304596
+Support activities for agriculture and forestry,June 2024,46129373,5795757
+Support activities for agriculture and forestry,July 2024,41513339,5685466
+Support activities for agriculture and forestry,August 2024,42862554,5268610
+Support activities for agriculture and forestry,September 2024,43875244,7044027
+Support activities for agriculture and forestry,October 2024,66686133,4579017
+Support activities for agriculture and forestry,November 2024,101308255,6536518
+Support activities for agriculture and forestry,December 2024,82258018,6202939
+Support activities for agriculture and forestry,January 2025,84002076,7161454
+Support activities for agriculture and forestry,February 2025,55798804,9028709
+Support activities for agriculture and forestry,March 2025,94902696,8694144
+Support activities for agriculture and forestry,April 2025,59049812,5438286
+Support activities for agriculture and forestry,May 2025,47845984,5296797
+Support activities for agriculture and forestry,June 2025,49936468,7901017
+Support activities for agriculture and forestry,July 2025,47711269,5450748
+Support activities for agriculture and forestry,August 2025,56011568,4814222
+"Mining, quarrying, and oil and gas extraction",January 2024,1844400419,14092324624
+"Mining, quarrying, and oil and gas extraction",February 2024,1715200992,11550131462
+"Mining, quarrying, and oil and gas extraction",March 2024,1989139443,11847758253
+"Mining, quarrying, and oil and gas extraction",April 2024,1970063025,13691810991
+"Mining, quarrying, and oil and gas extraction",May 2024,1744934898,14219325971
+"Mining, quarrying, and oil and gas extraction",June 2024,2107311620,13101030467
+"Mining, quarrying, and oil and gas extraction",July 2024,2122134819,16463238993
+"Mining, quarrying, and oil and gas extraction",August 2024,2197414431,12937185778
+"Mining, quarrying, and oil and gas extraction",September 2024,1773285122,13353791914
+"Mining, quarrying, and oil and gas extraction",October 2024,1817009967,12912026452
+"Mining, quarrying, and oil and gas extraction",November 2024,2119491346,13743407647
+"Mining, quarrying, and oil and gas extraction",December 2024,1711861062,16195684904
+"Mining, quarrying, and oil and gas extraction",January 2025,2049859681,18384909788
+"Mining, quarrying, and oil and gas extraction",February 2025,1950563346,16177658054
+"Mining, quarrying, and oil and gas extraction",March 2025,1697352330,12846553733
+"Mining, quarrying, and oil and gas extraction",April 2025,1398380729,12092195584
+"Mining, quarrying, and oil and gas extraction",May 2025,2057080159,11427424016
+"Mining, quarrying, and oil and gas extraction",June 2025,1782849259,10399256433
+"Mining, quarrying, and oil and gas extraction",July 2025,2399055948,13517683460
+"Mining, quarrying, and oil and gas extraction",August 2025,2151754565,11921495629
+Oil and gas extraction,January 2024,1482120272,13061380697
+Oil and gas extraction,February 2024,1447106949,10862037390
+Oil and gas extraction,March 2024,1746760907,11103611395
+Oil and gas extraction,April 2024,1557823337,12649449088
+Oil and gas extraction,May 2024,1251109896,13137556694
+Oil and gas extraction,June 2024,1618788502,12272904367
+Oil and gas extraction,July 2024,1551497317,14719147306
+Oil and gas extraction,August 2024,1639691752,12252774470
+Oil and gas extraction,September 2024,1298280807,12125146952
+Oil and gas extraction,October 2024,1092303630,12100749693
+Oil and gas extraction,November 2024,1616878863,11274660186
+Oil and gas extraction,December 2024,1214966290,13596939835
+Oil and gas extraction,January 2025,1656772184,15185850786
+Oil and gas extraction,February 2025,1624551249,13295858271
+Oil and gas extraction,March 2025,1467092039,11985473423
+Oil and gas extraction,April 2025,1084439933,11373059261
+Oil and gas extraction,May 2025,922076466,10669810767
+Oil and gas extraction,June 2025,1360824607,9892004722
+Oil and gas extraction,July 2025,1920244239,11618166703
+Oil and gas extraction,August 2025,1447221005,10953462577
+Mining and quarrying (except oil and gas),January 2024,362280147,1030943927
+Mining and quarrying (except oil and gas),February 2024,268094043,688094072
+Mining and quarrying (except oil and gas),March 2024,242378536,744146858
+Mining and quarrying (except oil and gas),April 2024,412239688,1042361903
+Mining and quarrying (except oil and gas),May 2024,493825002,1081769277
+Mining and quarrying (except oil and gas),June 2024,488523118,828126100
+Mining and quarrying (except oil and gas),July 2024,570637502,1744091687
+Mining and quarrying (except oil and gas),August 2024,557722679,684411308
+Mining and quarrying (except oil and gas),September 2024,475004315,1228644962
+Mining and quarrying (except oil and gas),October 2024,724706337,811276759
+Mining and quarrying (except oil and gas),November 2024,502612483,2468747461
+Mining and quarrying (except oil and gas),December 2024,496894772,2598745069
+Mining and quarrying (except oil and gas),January 2025,393087497,3199059002
+Mining and quarrying (except oil and gas),February 2025,326012097,2881799783
+Mining and quarrying (except oil and gas),March 2025,230260291,861080310
+Mining and quarrying (except oil and gas),April 2025,313940796,719136323
+Mining and quarrying (except oil and gas),May 2025,1135003693,757613249
+Mining and quarrying (except oil and gas),June 2025,422024652,507251711
+Mining and quarrying (except oil and gas),July 2025,478811709,1899516757
+Mining and quarrying (except oil and gas),August 2025,704533560,968033052
+"Support activities for mining, and oil and gas extraction",January 2024,0,0
+"Support activities for mining, and oil and gas extraction",February 2024,0,0
+"Support activities for mining, and oil and gas extraction",March 2024,0,0
+"Support activities for mining, and oil and gas extraction",April 2024,0,0
+"Support activities for mining, and oil and gas extraction",May 2024,0,0
+"Support activities for mining, and oil and gas extraction",June 2024,0,0
+"Support activities for mining, and oil and gas extraction",July 2024,0,0
+"Support activities for mining, and oil and gas extraction",August 2024,0,0
+"Support activities for mining, and oil and gas extraction",September 2024,0,0
+"Support activities for mining, and oil and gas extraction",October 2024,0,0
+"Support activities for mining, and oil and gas extraction",November 2024,0,0
+"Support activities for mining, and oil and gas extraction",December 2024,0,0
+"Support activities for mining, and oil and gas extraction",January 2025,0,0
+"Support activities for mining, and oil and gas extraction",February 2025,0,0
+"Support activities for mining, and oil and gas extraction",March 2025,0,0
+"Support activities for mining, and oil and gas extraction",April 2025,0,0
+"Support activities for mining, and oil and gas extraction",May 2025,0,0
+"Support activities for mining, and oil and gas extraction",June 2025,0,0
+"Support activities for mining, and oil and gas extraction",July 2025,0,0
+"Support activities for mining, and oil and gas extraction",August 2025,0,0
+Utilities,January 2024,199872017,567606234
+Utilities,February 2024,280701616,219304121
+Utilities,March 2024,157402634,152901156
+Utilities,April 2024,210661060,99496760
+Utilities,May 2024,102413857,180849144
+Utilities,June 2024,52415219,268778060
+Utilities,July 2024,73678689,423152428
+Utilities,August 2024,73369969,329046559
+Utilities,September 2024,92154703,264888565
+Utilities,October 2024,72350846,176474272
+Utilities,November 2024,69476286,139590192
+Utilities,December 2024,108257390,323665747
+Utilities,January 2025,97951044,619342972
+Utilities,February 2025,120493593,456828276
+Utilities,March 2025,127020442,158405685
+Utilities,April 2025,89891002,152785899
+Utilities,May 2025,63621904,142386071
+Utilities,June 2025,81545035,266051835
+Utilities,July 2025,104197704,355456608
+Utilities,August 2025,87499770,354477397
+Manufacturing,January 2024,23796112884,29534181733
+Manufacturing,February 2024,25990998555,31003081657
+Manufacturing,March 2024,27941485718,32516740338
+Manufacturing,April 2024,28298196462,31627488533
+Manufacturing,May 2024,27966247632,32903383942
+Manufacturing,June 2024,27442148934,32801658905
+Manufacturing,July 2024,24802956041,31399221972
+Manufacturing,August 2024,27163130683,30192399401
+Manufacturing,September 2024,26323975724,31742619653
+Manufacturing,October 2024,27403356551,33084298429
+Manufacturing,November 2024,26898330813,31848576421
+Manufacturing,December 2024,23481753413,32446512203
+Manufacturing,January 2025,25933123597,34866042019
+Manufacturing,February 2025,27652439936,31700911136
+Manufacturing,March 2025,32280564258,35882521261
+Manufacturing,April 2025,24962836868,26785962136
+Manufacturing,May 2025,25146606739,27958014709
+Manufacturing,June 2025,26824468605,28346333562
+Manufacturing,July 2025,23473141990,28317031612
+Manufacturing,August 2025,24078741454,26518174858
+Food manufacturing,January 2024,1838681280,3504247481
+Food manufacturing,February 2024,1893720742,3395507796
+Food manufacturing,March 2024,2085498320,3762963411
+Food manufacturing,April 2024,2034792607,3705670225
+Food manufacturing,May 2024,2146025172,4093608853
+Food manufacturing,June 2024,2238344944,3923529860
+Food manufacturing,July 2024,2142873135,3956462776
+Food manufacturing,August 2024,2248514421,3682209858
+Food manufacturing,September 2024,2088455370,3884494841
+Food manufacturing,October 2024,2228074024,4181167648
+Food manufacturing,November 2024,2140228015,3948339743
+Food manufacturing,December 2024,2020658397,3969876996
+Food manufacturing,January 2025,2202910913,3895275599
+Food manufacturing,February 2025,2108246717,3401501224
+Food manufacturing,March 2025,2428480701,3923524362
+Food manufacturing,April 2025,1814925207,3349340764
+Food manufacturing,May 2025,1941979591,3832038791
+Food manufacturing,June 2025,1963867504,3997909257
+Food manufacturing,July 2025,2056876894,3895525863
+Food manufacturing,August 2025,2001914999,3638364673
+Beverage and tobacco product manufacturing,January 2024,157476502,135529667
+Beverage and tobacco product manufacturing,February 2024,167609026,144450404
+Beverage and tobacco product manufacturing,March 2024,187143404,171197426
+Beverage and tobacco product manufacturing,April 2024,204543569,150845365
+Beverage and tobacco product manufacturing,May 2024,208467185,143973505
+Beverage and tobacco product manufacturing,June 2024,190841110,137438702
+Beverage and tobacco product manufacturing,July 2024,191143853,139875382
+Beverage and tobacco product manufacturing,August 2024,207347623,118403352
+Beverage and tobacco product manufacturing,September 2024,209576538,147164078
+Beverage and tobacco product manufacturing,October 2024,225841777,151768289
+Beverage and tobacco product manufacturing,November 2024,214095387,153270625
+Beverage and tobacco product manufacturing,December 2024,187128784,170080367
+Beverage and tobacco product manufacturing,January 2025,192704662,142232160
+Beverage and tobacco product manufacturing,February 2025,193288428,153781661
+Beverage and tobacco product manufacturing,March 2025,172394580,156705841
+Beverage and tobacco product manufacturing,April 2025,123017928,153838247
+Beverage and tobacco product manufacturing,May 2025,124808045,145370293
+Beverage and tobacco product manufacturing,June 2025,119403793,158947101
+Beverage and tobacco product manufacturing,July 2025,129216324,148992152
+Beverage and tobacco product manufacturing,August 2025,117943756,122743726
+Textile mills,January 2024,82920824,79205556
+Textile mills,February 2024,85490712,78448338
+Textile mills,March 2024,95433611,89229720
+Textile mills,April 2024,88005368,84664426
+Textile mills,May 2024,97374834,82430824
+Textile mills,June 2024,89236504,77883113
+Textile mills,July 2024,80102378,74011511
+Textile mills,August 2024,89949377,70995140
+Textile mills,September 2024,79565079,77400437
+Textile mills,October 2024,94787991,79154882
+Textile mills,November 2024,82498813,70030390
+Textile mills,December 2024,66422437,68100516
+Textile mills,January 2025,86485099,80511006
+Textile mills,February 2025,89485285,62674902
+Textile mills,March 2025,100803823,87925716
+Textile mills,April 2025,87391506,60970623
+Textile mills,May 2025,89134976,72852260
+Textile mills,June 2025,86576225,66309668
+Textile mills,July 2025,81649232,63940444
+Textile mills,August 2025,87246992,58645141
+Textile product mills,January 2024,86278769,37173007
+Textile product mills,February 2024,93461663,35660051
+Textile product mills,March 2024,103596647,47344765
+Textile product mills,April 2024,102521434,45045892
+Textile product mills,May 2024,97735283,47512269
+Textile product mills,June 2024,98757287,48992432
+Textile product mills,July 2024,91989979,43073415
+Textile product mills,August 2024,103467554,42965934
+Textile product mills,September 2024,95874538,51449145
+Textile product mills,October 2024,104977667,54344528
+Textile product mills,November 2024,97046660,45399903
+Textile product mills,December 2024,82370240,43920289
+Textile product mills,January 2025,101508326,45379312
+Textile product mills,February 2025,108372644,39487924
+Textile product mills,March 2025,111244747,47366801
+Textile product mills,April 2025,82382741,38495758
+Textile product mills,May 2025,86231185,35630666
+Textile product mills,June 2025,85929224,37517480
+Textile product mills,July 2025,85231923,42944479
+Textile product mills,August 2025,83603094,36399213
+Apparel manufacturing,January 2024,34459249,127009680
+Apparel manufacturing,February 2024,33709452,134260639
+Apparel manufacturing,March 2024,34130530,132610948
+Apparel manufacturing,April 2024,35038222,133069104
+Apparel manufacturing,May 2024,32420915,134903094
+Apparel manufacturing,June 2024,29898453,132894322
+Apparel manufacturing,July 2024,34088559,164148771
+Apparel manufacturing,August 2024,37199068,176968949
+Apparel manufacturing,September 2024,36147522,167285988
+Apparel manufacturing,October 2024,43336694,168830703
+Apparel manufacturing,November 2024,39400840,141368744
+Apparel manufacturing,December 2024,48441010,134236128
+Apparel manufacturing,January 2025,45803379,176755474
+Apparel manufacturing,February 2025,36605534,151509264
+Apparel manufacturing,March 2025,33678412,134097961
+Apparel manufacturing,April 2025,30901999,158733613
+Apparel manufacturing,May 2025,33353366,143849501
+Apparel manufacturing,June 2025,31994782,130047495
+Apparel manufacturing,July 2025,32580903,145389706
+Apparel manufacturing,August 2025,26595290,145799655
+Leather and allied product manufacturing,January 2024,19007565,30100176
+Leather and allied product manufacturing,February 2024,21109384,29594992
+Leather and allied product manufacturing,March 2024,21483106,40434597
+Leather and allied product manufacturing,April 2024,19786158,33664983
+Leather and allied product manufacturing,May 2024,21095629,34807854
+Leather and allied product manufacturing,June 2024,19174748,46978765
+Leather and allied product manufacturing,July 2024,18911027,37752467
+Leather and allied product manufacturing,August 2024,20862232,39482929
+Leather and allied product manufacturing,September 2024,17801548,50999735
+Leather and allied product manufacturing,October 2024,22252835,53693813
+Leather and allied product manufacturing,November 2024,21229055,38466596
+Leather and allied product manufacturing,December 2024,21670129,47437597
+Leather and allied product manufacturing,January 2025,19631552,38324659
+Leather and allied product manufacturing,February 2025,19060468,38934834
+Leather and allied product manufacturing,March 2025,20802318,41071718
+Leather and allied product manufacturing,April 2025,17747080,46398081
+Leather and allied product manufacturing,May 2025,18006462,40278364
+Leather and allied product manufacturing,June 2025,15902185,42874476
+Leather and allied product manufacturing,July 2025,15973026,42816515
+Leather and allied product manufacturing,August 2025,11835136,37412993
+Wood product manufacturing,January 2024,215092731,1256880018
+Wood product manufacturing,February 2024,225038981,1340549369
+Wood product manufacturing,March 2024,234907081,1528411476
+Wood product manufacturing,April 2024,240462918,1577639065
+Wood product manufacturing,May 2024,236740365,1540018505
+Wood product manufacturing,June 2024,230908195,1442336423
+Wood product manufacturing,July 2024,211697328,1351673890
+Wood product manufacturing,August 2024,223185623,1250299672
+Wood product manufacturing,September 2024,201278826,1318775306
+Wood product manufacturing,October 2024,235578417,1400565838
+Wood product manufacturing,November 2024,209562137,1323145732
+Wood product manufacturing,December 2024,168656852,1280657387
+Wood product manufacturing,January 2025,222967006,1495898254
+Wood product manufacturing,February 2025,237166942,1299518166
+Wood product manufacturing,March 2025,162077136,1732286855
+Wood product manufacturing,April 2025,155907535,1331974014
+Wood product manufacturing,May 2025,183004582,1340995961
+Wood product manufacturing,June 2025,169593617,1276367388
+Wood product manufacturing,July 2025,176337788,1378698509
+Wood product manufacturing,August 2025,169262379,1020492651
+Paper manufacturing,January 2024,661053301,1062534401
+Paper manufacturing,February 2024,641903810,1042305994
+Paper manufacturing,March 2024,666641084,1082312599
+Paper manufacturing,April 2024,671342466,1083407929
+Paper manufacturing,May 2024,721098319,1061856634
+Paper manufacturing,June 2024,725490159,1076755244
+Paper manufacturing,July 2024,770399795,1160483442
+Paper manufacturing,August 2024,766124522,1093544142
+Paper manufacturing,September 2024,713750217,1155436218
+Paper manufacturing,October 2024,782262787,1207326686
+Paper manufacturing,November 2024,740032910,1115798068
+Paper manufacturing,December 2024,688145487,1151212946
+Paper manufacturing,January 2025,790865157,1252828990
+Paper manufacturing,February 2025,684237807,1087588085
+Paper manufacturing,March 2025,774390717,1296768227
+Paper manufacturing,April 2025,648493720,1009639930
+Paper manufacturing,May 2025,668011628,1016768982
+Paper manufacturing,June 2025,646285907,1003401269
+Paper manufacturing,July 2025,714944713,1068428326
+Paper manufacturing,August 2025,675132540,1064333920
+Printing and related support activities,January 2024,76454109,71014131
+Printing and related support activities,February 2024,102392892,69181003
+Printing and related support activities,March 2024,87422102,70858056
+Printing and related support activities,April 2024,88891847,79592919
+Printing and related support activities,May 2024,82372563,71446326
+Printing and related support activities,June 2024,77545108,80188608
+Printing and related support activities,July 2024,77797983,69458205
+Printing and related support activities,August 2024,92556478,66742500
+Printing and related support activities,September 2024,95294806,88511277
+Printing and related support activities,October 2024,105941635,85588645
+Printing and related support activities,November 2024,91829034,80890341
+Printing and related support activities,December 2024,80899525,71802607
+Printing and related support activities,January 2025,84744702,72672238
+Printing and related support activities,February 2025,93662032,70735648
+Printing and related support activities,March 2025,89758400,84929960
+Printing and related support activities,April 2025,73242700,55601956
+Printing and related support activities,May 2025,82597014,56261318
+Printing and related support activities,June 2025,68956554,60893693
+Printing and related support activities,July 2025,73088246,59652353
+Printing and related support activities,August 2025,82269162,56880430
+Petroleum and coal product manufacturing,January 2024,1491273007,2310256730
+Petroleum and coal product manufacturing,February 2024,1460659716,2318619082
+Petroleum and coal product manufacturing,March 2024,1476806195,2237417925
+Petroleum and coal product manufacturing,April 2024,1685348206,1854974415
+Petroleum and coal product manufacturing,May 2024,1573101954,1989392112
+Petroleum and coal product manufacturing,June 2024,1507014355,2109263550
+Petroleum and coal product manufacturing,July 2024,1393014675,2111796694
+Petroleum and coal product manufacturing,August 2024,1391790936,2204521990
+Petroleum and coal product manufacturing,September 2024,1304746183,1738652193
+Petroleum and coal product manufacturing,October 2024,1431634310,2108476239
+Petroleum and coal product manufacturing,November 2024,1634807316,1933034617
+Petroleum and coal product manufacturing,December 2024,1458813916,2378052601
+Petroleum and coal product manufacturing,January 2025,1612265540,2539978062
+Petroleum and coal product manufacturing,February 2025,1588334001,2090530192
+Petroleum and coal product manufacturing,March 2025,1594579506,2059363560
+Petroleum and coal product manufacturing,April 2025,1580041895,1551244302
+Petroleum and coal product manufacturing,May 2025,1430137370,1536722502
+Petroleum and coal product manufacturing,June 2025,1543360308,1661848242
+Petroleum and coal product manufacturing,July 2025,1562378778,1724060704
+Petroleum and coal product manufacturing,August 2025,1463790526,1929244199
+Chemical manufacturing,January 2024,3541025807,3243377225
+Chemical manufacturing,February 2024,3907136895,3594559226
+Chemical manufacturing,March 2024,4192673226,3603932982
+Chemical manufacturing,April 2024,4255957336,3617046442
+Chemical manufacturing,May 2024,4135325688,3717421991
+Chemical manufacturing,June 2024,3882268648,4089274920
+Chemical manufacturing,July 2024,4265548775,4370560471
+Chemical manufacturing,August 2024,3936811093,3537527102
+Chemical manufacturing,September 2024,3807073059,3071386970
+Chemical manufacturing,October 2024,4205292001,3581646277
+Chemical manufacturing,November 2024,4012859577,3509518876
+Chemical manufacturing,December 2024,3721867629,3091392719
+Chemical manufacturing,January 2025,3926918839,3981062169
+Chemical manufacturing,February 2025,3882775842,3776175140
+Chemical manufacturing,March 2025,5035848221,3881168585
+Chemical manufacturing,April 2025,3811104579,2889516547
+Chemical manufacturing,May 2025,3827478202,2652801645
+Chemical manufacturing,June 2025,3717693609,2893634644
+Chemical manufacturing,July 2025,3769599012,2870763343
+Chemical manufacturing,August 2025,4059662869,2844035035
+Plastics and rubber products manufacturing,January 2024,1103690078,1522302825
+Plastics and rubber products manufacturing,February 2024,1141610272,1512013473
+Plastics and rubber products manufacturing,March 2024,1227182749,1585174699
+Plastics and rubber products manufacturing,April 2024,1218396798,1694766834
+Plastics and rubber products manufacturing,May 2024,1261880996,1675407743
+Plastics and rubber products manufacturing,June 2024,1206395817,1647940850
+Plastics and rubber products manufacturing,July 2024,1177144929,1554215154
+Plastics and rubber products manufacturing,August 2024,1219562559,1527466182
+Plastics and rubber products manufacturing,September 2024,1120297612,1638984539
+Plastics and rubber products manufacturing,October 2024,1223289108,1666407089
+Plastics and rubber products manufacturing,November 2024,1121937536,1523473722
+Plastics and rubber products manufacturing,December 2024,969854660,1443152985
+Plastics and rubber products manufacturing,January 2025,1184823385,1617694739
+Plastics and rubber products manufacturing,February 2025,1229092346,1547154770
+Plastics and rubber products manufacturing,March 2025,1379110451,1807078910
+Plastics and rubber products manufacturing,April 2025,1125672797,1473829977
+Plastics and rubber products manufacturing,May 2025,1118154949,1497998954
+Plastics and rubber products manufacturing,June 2025,1065614153,1519784405
+Plastics and rubber products manufacturing,July 2025,1077138045,1452284481
+Plastics and rubber products manufacturing,August 2025,1091960985,1472401304
+Non-metallic mineral product manufacturing,January 2024,310939840,234534333
+Non-metallic mineral product manufacturing,February 2024,329396017,244588094
+Non-metallic mineral product manufacturing,March 2024,344270536,278240735
+Non-metallic mineral product manufacturing,April 2024,344645179,299768940
+Non-metallic mineral product manufacturing,May 2024,366172585,323883550
+Non-metallic mineral product manufacturing,June 2024,352462568,305611421
+Non-metallic mineral product manufacturing,July 2024,348809643,301642448
+Non-metallic mineral product manufacturing,August 2024,368018619,289361664
+Non-metallic mineral product manufacturing,September 2024,343810161,302045305
+Non-metallic mineral product manufacturing,October 2024,382073269,306606640
+Non-metallic mineral product manufacturing,November 2024,334482526,290033074
+Non-metallic mineral product manufacturing,December 2024,285617022,255747468
+Non-metallic mineral product manufacturing,January 2025,363728863,258016702
+Non-metallic mineral product manufacturing,February 2025,333931101,243863159
+Non-metallic mineral product manufacturing,March 2025,404881319,269827008
+Non-metallic mineral product manufacturing,April 2025,351251557,244996555
+Non-metallic mineral product manufacturing,May 2025,361754873,248978903
+Non-metallic mineral product manufacturing,June 2025,322931330,272760073
+Non-metallic mineral product manufacturing,July 2025,324056356,293442146
+Non-metallic mineral product manufacturing,August 2025,329943765,288521423
+Primary metal manufacturing,January 2024,1192387220,2996405076
+Primary metal manufacturing,February 2024,1166099181,2906957630
+Primary metal manufacturing,March 2024,1163036107,3007983107
+Primary metal manufacturing,April 2024,1210460297,3135799698
+Primary metal manufacturing,May 2024,1183999055,3202422880
+Primary metal manufacturing,June 2024,1153144904,3002606181
+Primary metal manufacturing,July 2024,1145332197,3160422763
+Primary metal manufacturing,August 2024,1229182366,2804834542
+Primary metal manufacturing,September 2024,1101533396,2988024375
+Primary metal manufacturing,October 2024,1165270777,3142443397
+Primary metal manufacturing,November 2024,1124458026,2694290425
+Primary metal manufacturing,December 2024,896837533,3024667014
+Primary metal manufacturing,January 2025,1260833560,3699611309
+Primary metal manufacturing,February 2025,1186576364,3105571522
+Primary metal manufacturing,March 2025,1240792100,3404365722
+Primary metal manufacturing,April 2025,925372343,2558607360
+Primary metal manufacturing,May 2025,912023533,2451178729
+Primary metal manufacturing,June 2025,957936902,2176659964
+Primary metal manufacturing,July 2025,968993439,2564894270
+Primary metal manufacturing,August 2025,950303634,1978975233
+Fabricated metal product manufacturing,January 2024,1008771758,935028938
+Fabricated metal product manufacturing,February 2024,1079992383,961626742
+Fabricated metal product manufacturing,March 2024,1151955627,1049002863
+Fabricated metal product manufacturing,April 2024,1168900286,1084042225
+Fabricated metal product manufacturing,May 2024,1198266105,1058579066
+Fabricated metal product manufacturing,June 2024,1155420293,1044485226
+Fabricated metal product manufacturing,July 2024,1085068377,987621170
+Fabricated metal product manufacturing,August 2024,1183938247,987712790
+Fabricated metal product manufacturing,September 2024,1113543474,1044989308
+Fabricated metal product manufacturing,October 2024,1203729054,1078762092
+Fabricated metal product manufacturing,November 2024,1115150816,1037820360
+Fabricated metal product manufacturing,December 2024,939776184,984193125
+Fabricated metal product manufacturing,January 2025,1132124222,1084025146
+Fabricated metal product manufacturing,February 2025,1152366139,981550233
+Fabricated metal product manufacturing,March 2025,1238597400,1105807553
+Fabricated metal product manufacturing,April 2025,1074100299,805656469
+Fabricated metal product manufacturing,May 2025,1048186370,801675210
+Fabricated metal product manufacturing,June 2025,1033955992,773730712
+Fabricated metal product manufacturing,July 2025,1046688303,767737335
+Fabricated metal product manufacturing,August 2025,989742026,684195319
+Machinery manufacturing,January 2024,3139775093,2648234900
+Machinery manufacturing,February 2024,3207345386,2911787318
+Machinery manufacturing,March 2024,3624065699,3107361361
+Machinery manufacturing,April 2024,3429273413,2929006691
+Machinery manufacturing,May 2024,3460279394,3034341473
+Machinery manufacturing,June 2024,3375163373,3052325745
+Machinery manufacturing,July 2024,2935616568,3006224192
+Machinery manufacturing,August 2024,3366845873,2748288595
+Machinery manufacturing,September 2024,2972431667,3040068523
+Machinery manufacturing,October 2024,3235032979,2924864136
+Machinery manufacturing,November 2024,3013459334,2960169095
+Machinery manufacturing,December 2024,3001734960,3016960609
+Machinery manufacturing,January 2025,2926481581,3376524468
+Machinery manufacturing,February 2025,3345516983,3176919070
+Machinery manufacturing,March 2025,3928586083,3762160877
+Machinery manufacturing,April 2025,2949531237,2442940612
+Machinery manufacturing,May 2025,2998752363,2663179816
+Machinery manufacturing,June 2025,4973416213,2779986099
+Machinery manufacturing,July 2025,2735740904,2878063116
+Machinery manufacturing,August 2025,2849480278,2388198599
+Computer and electronic product manufacturing,January 2024,960156152,904337925
+Computer and electronic product manufacturing,February 2024,1360970007,962683546
+Computer and electronic product manufacturing,March 2024,1201175116,1096166717
+Computer and electronic product manufacturing,April 2024,1027630348,993388707
+Computer and electronic product manufacturing,May 2024,1117279458,1047358023
+Computer and electronic product manufacturing,June 2024,1038365422,1053284170
+Computer and electronic product manufacturing,July 2024,944756388,982526762
+Computer and electronic product manufacturing,August 2024,1126953793,1019891506
+Computer and electronic product manufacturing,September 2024,1058932018,1050984431
+Computer and electronic product manufacturing,October 2024,1135486397,1110427659
+Computer and electronic product manufacturing,November 2024,1230267186,1049297838
+Computer and electronic product manufacturing,December 2024,959522549,1133305627
+Computer and electronic product manufacturing,January 2025,1096423328,1109030004
+Computer and electronic product manufacturing,February 2025,1094108741,1033928067
+Computer and electronic product manufacturing,March 2025,1306818980,1179782423
+Computer and electronic product manufacturing,April 2025,1010766121,868734835
+Computer and electronic product manufacturing,May 2025,987910404,907383216
+Computer and electronic product manufacturing,June 2025,971775749,916753466
+Computer and electronic product manufacturing,July 2025,935948461,963485878
+Computer and electronic product manufacturing,August 2025,930862620,915699912
+"Electrical equipment, appliance and component manufacturing",January 2024,926782449,926776585
+"Electrical equipment, appliance and component manufacturing",February 2024,945912942,892767539
+"Electrical equipment, appliance and component manufacturing",March 2024,1128322425,942594211
+"Electrical equipment, appliance and component manufacturing",April 2024,1201556894,952547704
+"Electrical equipment, appliance and component manufacturing",May 2024,1130229292,981223203
+"Electrical equipment, appliance and component manufacturing",June 2024,1087574322,1061554629
+"Electrical equipment, appliance and component manufacturing",July 2024,956522052,1108166488
+"Electrical equipment, appliance and component manufacturing",August 2024,1082197498,1036987113
+"Electrical equipment, appliance and component manufacturing",September 2024,1085011782,1150700937
+"Electrical equipment, appliance and component manufacturing",October 2024,1270208519,1221425455
+"Electrical equipment, appliance and component manufacturing",November 2024,1350475008,1356856263
+"Electrical equipment, appliance and component manufacturing",December 2024,1034095099,1303389718
+"Electrical equipment, appliance and component manufacturing",January 2025,1028646326,1201642322
+"Electrical equipment, appliance and component manufacturing",February 2025,1051171615,1120276782
+"Electrical equipment, appliance and component manufacturing",March 2025,1320029104,1266378647
+"Electrical equipment, appliance and component manufacturing",April 2025,1153873393,931369195
+"Electrical equipment, appliance and component manufacturing",May 2025,1085902211,972413802
+"Electrical equipment, appliance and component manufacturing",June 2025,970851520,1079133304
+"Electrical equipment, appliance and component manufacturing",July 2025,909580419,1070043131
+"Electrical equipment, appliance and component manufacturing",August 2025,960011456,986496145
+Transportation equipment manufacturing,January 2024,6230115680,6646434247
+Transportation equipment manufacturing,February 2024,7395760868,7453814823
+Transportation equipment manufacturing,March 2024,8110154950,7727566524
+Transportation equipment manufacturing,April 2024,8498062034,7138906617
+Transportation equipment manufacturing,May 2024,8095176801,7718889689
+Transportation equipment manufacturing,June 2024,8161974431,7501602475
+Transportation equipment manufacturing,July 2024,6206187397,5877288088
+Transportation equipment manufacturing,August 2024,7678310343,6601675973
+Transportation equipment manufacturing,September 2024,8116749689,7834908950
+Transportation equipment manufacturing,October 2024,7401429780,7470145506
+Transportation equipment manufacturing,November 2024,7480885415,7586564801
+Transportation equipment manufacturing,December 2024,6021416877,7768176358
+Transportation equipment manufacturing,January 2025,6798886680,7337898873
+Transportation equipment manufacturing,February 2025,8311894711,7089390841
+Transportation equipment manufacturing,March 2025,10094053221,8468079188
+Transportation equipment manufacturing,April 2025,7261511179,5962202234
+Transportation equipment manufacturing,May 2025,7441245864,6660963837
+Transportation equipment manufacturing,June 2025,7345084209,6661071197
+Transportation equipment manufacturing,July 2025,6110765275,5941686343
+Transportation equipment manufacturing,August 2025,6566018644,6061127083
+Furniture and related product manufacturing,January 2024,151706566,399875204
+Furniture and related product manufacturing,February 2024,151907936,410168710
+Furniture and related product manufacturing,March 2024,168284238,448599455
+Furniture and related product manufacturing,April 2024,165335148,448737638
+Furniture and related product manufacturing,May 2024,160899287,447759770
+Furniture and related product manufacturing,June 2024,159445207,485902671
+Furniture and related product manufacturing,July 2024,158177717,461310419
+Furniture and related product manufacturing,August 2024,179634001,425479815
+Furniture and related product manufacturing,September 2024,159552400,467959600
+Furniture and related product manufacturing,October 2024,173020410,481482355
+Furniture and related product manufacturing,November 2024,160598087,446700809
+Furniture and related product manufacturing,December 2024,140734319,396071739
+Furniture and related product manufacturing,January 2025,150228383,416582635
+Furniture and related product manufacturing,February 2025,160558445,418866579
+Furniture and related product manufacturing,March 2025,155798264,471879200
+Furniture and related product manufacturing,April 2025,127157348,376321971
+Furniture and related product manufacturing,May 2025,124653282,379301254
+Furniture and related product manufacturing,June 2025,113743092,415912841
+Furniture and related product manufacturing,July 2025,122893833,425703062
+Furniture and related product manufacturing,August 2025,116321944,383375343
+Miscellaneous manufacturing,January 2024,568064904,462923628
+Miscellaneous manufacturing,February 2024,579770290,563536888
+Miscellaneous manufacturing,March 2024,637302965,507336761
+Miscellaneous manufacturing,April 2024,607245934,584902714
+Miscellaneous manufacturing,May 2024,640306752,496146578
+Miscellaneous manufacturing,June 2024,662723086,480809598
+Miscellaneous manufacturing,July 2024,567773286,480507464
+Miscellaneous manufacturing,August 2024,610678457,467039653
+Miscellaneous manufacturing,September 2024,602549839,472397497
+Miscellaneous manufacturing,October 2024,733836120,609170552
+Miscellaneous manufacturing,November 2024,683027135,544106399
+Miscellaneous manufacturing,December 2024,687089804,714077407
+Miscellaneous manufacturing,January 2025,704142094,1044097898
+Miscellaneous manufacturing,February 2025,745987791,810953073
+Miscellaneous manufacturing,March 2025,687838775,701952147
+Miscellaneous manufacturing,April 2025,558443704,475549093
+Miscellaneous manufacturing,May 2025,583280469,501370705
+Miscellaneous manufacturing,June 2025,619595737,420790788
+Miscellaneous manufacturing,July 2025,543460116,518479456
+Miscellaneous manufacturing,August 2025,514839359,404832861
+Wholesale trade,January 2024,610816422,403567607
+Wholesale trade,February 2024,616287092,397849253
+Wholesale trade,March 2024,667012814,449888695
+Wholesale trade,April 2024,879698740,455623262
+Wholesale trade,May 2024,824824198,477470213
+Wholesale trade,June 2024,717053567,481097478
+Wholesale trade,July 2024,751288829,470969035
+Wholesale trade,August 2024,727010864,475377538
+Wholesale trade,September 2024,770208709,452908115
+Wholesale trade,October 2024,922106107,477942777
+Wholesale trade,November 2024,785224201,477540039
+Wholesale trade,December 2024,745857422,467592947
+Wholesale trade,January 2025,686400562,576486002
+Wholesale trade,February 2025,456039507,446870704
+Wholesale trade,March 2025,420105770,637521866
+Wholesale trade,April 2025,255572496,378675535
+Wholesale trade,May 2025,401417167,359283393
+Wholesale trade,June 2025,467340885,385833915
+Wholesale trade,July 2025,992078254,412067518
+Wholesale trade,August 2025,575505063,418640652
+Farm product merchant wholesalers,January 2024,0,0
+Farm product merchant wholesalers,February 2024,0,0
+Farm product merchant wholesalers,March 2024,0,0
+Farm product merchant wholesalers,April 2024,0,0
+Farm product merchant wholesalers,May 2024,0,0
+Farm product merchant wholesalers,June 2024,0,0
+Farm product merchant wholesalers,July 2024,0,0
+Farm product merchant wholesalers,August 2024,0,0
+Farm product merchant wholesalers,September 2024,0,0
+Farm product merchant wholesalers,October 2024,0,0
+Farm product merchant wholesalers,November 2024,0,0
+Farm product merchant wholesalers,December 2024,0,0
+Farm product merchant wholesalers,January 2025,0,0
+Farm product merchant wholesalers,February 2025,0,0
+Farm product merchant wholesalers,March 2025,0,0
+Farm product merchant wholesalers,April 2025,0,0
+Farm product merchant wholesalers,May 2025,0,0
+Farm product merchant wholesalers,June 2025,0,0
+Farm product merchant wholesalers,July 2025,0,0
+Farm product merchant wholesalers,August 2025,0,0
+"Petroleum, petroleum products, and other hydrocarbons merchant wholesalers",January 2024,0,0
+"Petroleum, petroleum products, and other hydrocarbons merchant wholesalers",February 2024,0,0
+"Petroleum, petroleum products, and other hydrocarbons merchant wholesalers",March 2024,0,0
+"Petroleum, petroleum products, and other hydrocarbons merchant wholesalers",April 2024,0,0
+"Petroleum, petroleum products, and other hydrocarbons merchant wholesalers",May 2024,0,0
+"Petroleum, petroleum products, and other hydrocarbons merchant wholesalers",June 2024,0,0
+"Petroleum, petroleum products, and other hydrocarbons merchant wholesalers",July 2024,0,0
+"Petroleum, petroleum products, and other hydrocarbons merchant wholesalers",August 2024,0,0
+"Petroleum, petroleum products, and other hydrocarbons merchant wholesalers",September 2024,0,0
+"Petroleum, petroleum products, and other hydrocarbons merchant wholesalers",October 2024,0,0
+"Petroleum, petroleum products, and other hydrocarbons merchant wholesalers",November 2024,0,0
+"Petroleum, petroleum products, and other hydrocarbons merchant wholesalers",December 2024,0,0
+"Petroleum, petroleum products, and other hydrocarbons merchant wholesalers",January 2025,0,0
+"Petroleum, petroleum products, and other hydrocarbons merchant wholesalers",February 2025,0,0
+"Petroleum, petroleum products, and other hydrocarbons merchant wholesalers",March 2025,0,0
+"Petroleum, petroleum products, and other hydrocarbons merchant wholesalers",April 2025,0,0
+"Petroleum, petroleum products, and other hydrocarbons merchant wholesalers",May 2025,0,0
+"Petroleum, petroleum products, and other hydrocarbons merchant wholesalers",June 2025,0,0
+"Petroleum, petroleum products, and other hydrocarbons merchant wholesalers",July 2025,0,0
+"Petroleum, petroleum products, and other hydrocarbons merchant wholesalers",August 2025,0,0
+"Food, beverage and tobacco merchant wholesalers",January 2024,0,8918
+"Food, beverage and tobacco merchant wholesalers",February 2024,0,0
+"Food, beverage and tobacco merchant wholesalers",March 2024,0,0
+"Food, beverage and tobacco merchant wholesalers",April 2024,0,0
+"Food, beverage and tobacco merchant wholesalers",May 2024,0,0
+"Food, beverage and tobacco merchant wholesalers",June 2024,0,0
+"Food, beverage and tobacco merchant wholesalers",July 2024,0,0
+"Food, beverage and tobacco merchant wholesalers",August 2024,0,3462
+"Food, beverage and tobacco merchant wholesalers",September 2024,0,2726
+"Food, beverage and tobacco merchant wholesalers",October 2024,0,8165
+"Food, beverage and tobacco merchant wholesalers",November 2024,0,5242
+"Food, beverage and tobacco merchant wholesalers",December 2024,0,0
+"Food, beverage and tobacco merchant wholesalers",January 2025,0,29805
+"Food, beverage and tobacco merchant wholesalers",February 2025,0,0
+"Food, beverage and tobacco merchant wholesalers",March 2025,0,0
+"Food, beverage and tobacco merchant wholesalers",April 2025,0,0
+"Food, beverage and tobacco merchant wholesalers",May 2025,0,0
+"Food, beverage and tobacco merchant wholesalers",June 2025,0,0
+"Food, beverage and tobacco merchant wholesalers",July 2025,0,0
+"Food, beverage and tobacco merchant wholesalers",August 2025,0,0
+Personal and household goods merchant wholesalers,January 2024,0,0
+Personal and household goods merchant wholesalers,February 2024,0,0
+Personal and household goods merchant wholesalers,March 2024,188780,0
+Personal and household goods merchant wholesalers,April 2024,0,0
+Personal and household goods merchant wholesalers,May 2024,100527,0
+Personal and household goods merchant wholesalers,June 2024,16492,0
+Personal and household goods merchant wholesalers,July 2024,8849,0
+Personal and household goods merchant wholesalers,August 2024,24729,0
+Personal and household goods merchant wholesalers,September 2024,107569,0
+Personal and household goods merchant wholesalers,October 2024,0,0
+Personal and household goods merchant wholesalers,November 2024,0,0
+Personal and household goods merchant wholesalers,December 2024,119000,0
+Personal and household goods merchant wholesalers,January 2025,25576,0
+Personal and household goods merchant wholesalers,February 2025,0,0
+Personal and household goods merchant wholesalers,March 2025,67,0
+Personal and household goods merchant wholesalers,April 2025,0,0
+Personal and household goods merchant wholesalers,May 2025,573,0
+Personal and household goods merchant wholesalers,June 2025,60333,0
+Personal and household goods merchant wholesalers,July 2025,549,0
+Personal and household goods merchant wholesalers,August 2025,341,0
+Motor vehicle and motor vehicle parts and accessories merchant wholesalers,January 2024,15539224,73957266
+Motor vehicle and motor vehicle parts and accessories merchant wholesalers,February 2024,32475071,78487718
+Motor vehicle and motor vehicle parts and accessories merchant wholesalers,March 2024,23183004,109835770
+Motor vehicle and motor vehicle parts and accessories merchant wholesalers,April 2024,38518984,125725349
+Motor vehicle and motor vehicle parts and accessories merchant wholesalers,May 2024,42520089,125808827
+Motor vehicle and motor vehicle parts and accessories merchant wholesalers,June 2024,53569222,133317237
+Motor vehicle and motor vehicle parts and accessories merchant wholesalers,July 2024,36175995,116992417
+Motor vehicle and motor vehicle parts and accessories merchant wholesalers,August 2024,26384188,147432104
+Motor vehicle and motor vehicle parts and accessories merchant wholesalers,September 2024,24142164,107641429
+Motor vehicle and motor vehicle parts and accessories merchant wholesalers,October 2024,22159519,124223249
+Motor vehicle and motor vehicle parts and accessories merchant wholesalers,November 2024,37817943,147467966
+Motor vehicle and motor vehicle parts and accessories merchant wholesalers,December 2024,18678177,160000252
+Motor vehicle and motor vehicle parts and accessories merchant wholesalers,January 2025,16690670,218374312
+Motor vehicle and motor vehicle parts and accessories merchant wholesalers,February 2025,27327258,129683683
+Motor vehicle and motor vehicle parts and accessories merchant wholesalers,March 2025,49049981,198427471
+Motor vehicle and motor vehicle parts and accessories merchant wholesalers,April 2025,25143587,65905661
+Motor vehicle and motor vehicle parts and accessories merchant wholesalers,May 2025,17803679,5694012
+Motor vehicle and motor vehicle parts and accessories merchant wholesalers,June 2025,15426072,6406456
+Motor vehicle and motor vehicle parts and accessories merchant wholesalers,July 2025,17217899,7634020
+Motor vehicle and motor vehicle parts and accessories merchant wholesalers,August 2025,15206897,26437763
+Building material and supplies merchant wholesalers,January 2024,0,0
+Building material and supplies merchant wholesalers,February 2024,0,0
+Building material and supplies merchant wholesalers,March 2024,0,0
+Building material and supplies merchant wholesalers,April 2024,0,0
+Building material and supplies merchant wholesalers,May 2024,0,0
+Building material and supplies merchant wholesalers,June 2024,0,0
+Building material and supplies merchant wholesalers,July 2024,0,0
+Building material and supplies merchant wholesalers,August 2024,0,0
+Building material and supplies merchant wholesalers,September 2024,0,0
+Building material and supplies merchant wholesalers,October 2024,0,0
+Building material and supplies merchant wholesalers,November 2024,0,0
+Building material and supplies merchant wholesalers,December 2024,0,0
+Building material and supplies merchant wholesalers,January 2025,0,0
+Building material and supplies merchant wholesalers,February 2025,0,0
+Building material and supplies merchant wholesalers,March 2025,0,0
+Building material and supplies merchant wholesalers,April 2025,0,0
+Building material and supplies merchant wholesalers,May 2025,0,0
+Building material and supplies merchant wholesalers,June 2025,0,0
+Building material and supplies merchant wholesalers,July 2025,0,0
+Building material and supplies merchant wholesalers,August 2025,0,0
+"Machinery, equipment and supplies merchant wholesalers",January 2024,24607930,0
+"Machinery, equipment and supplies merchant wholesalers",February 2024,21872650,0
+"Machinery, equipment and supplies merchant wholesalers",March 2024,29142726,0
+"Machinery, equipment and supplies merchant wholesalers",April 2024,26848575,0
+"Machinery, equipment and supplies merchant wholesalers",May 2024,25084534,0
+"Machinery, equipment and supplies merchant wholesalers",June 2024,14576559,0
+"Machinery, equipment and supplies merchant wholesalers",July 2024,23668147,0
+"Machinery, equipment and supplies merchant wholesalers",August 2024,24667683,0
+"Machinery, equipment and supplies merchant wholesalers",September 2024,17203855,0
+"Machinery, equipment and supplies merchant wholesalers",October 2024,13791193,0
+"Machinery, equipment and supplies merchant wholesalers",November 2024,20947935,0
+"Machinery, equipment and supplies merchant wholesalers",December 2024,12807450,0
+"Machinery, equipment and supplies merchant wholesalers",January 2025,20915353,0
+"Machinery, equipment and supplies merchant wholesalers",February 2025,13474757,0
+"Machinery, equipment and supplies merchant wholesalers",March 2025,24114292,0
+"Machinery, equipment and supplies merchant wholesalers",April 2025,19709694,0
+"Machinery, equipment and supplies merchant wholesalers",May 2025,11446520,0
+"Machinery, equipment and supplies merchant wholesalers",June 2025,15822728,0
+"Machinery, equipment and supplies merchant wholesalers",July 2025,19139372,0
+"Machinery, equipment and supplies merchant wholesalers",August 2025,10060377,0
+Miscellaneous merchant wholesalers,January 2024,570669268,329601423
+Miscellaneous merchant wholesalers,February 2024,561939371,319361535
+Miscellaneous merchant wholesalers,March 2024,614498304,340052925
+Miscellaneous merchant wholesalers,April 2024,814331181,329897913
+Miscellaneous merchant wholesalers,May 2024,757119048,351661386
+Miscellaneous merchant wholesalers,June 2024,648891294,347780241
+Miscellaneous merchant wholesalers,July 2024,691435838,353976618
+Miscellaneous merchant wholesalers,August 2024,675934264,327941972
+Miscellaneous merchant wholesalers,September 2024,728755121,345263960
+Miscellaneous merchant wholesalers,October 2024,886155395,353711363
+Miscellaneous merchant wholesalers,November 2024,726458323,330066831
+Miscellaneous merchant wholesalers,December 2024,714252795,307592695
+Miscellaneous merchant wholesalers,January 2025,648768963,358081885
+Miscellaneous merchant wholesalers,February 2025,415237492,317187021
+Miscellaneous merchant wholesalers,March 2025,346941430,439094395
+Miscellaneous merchant wholesalers,April 2025,210719215,312769874
+Miscellaneous merchant wholesalers,May 2025,372166395,353589381
+Miscellaneous merchant wholesalers,June 2025,436031752,379427459
+Miscellaneous merchant wholesalers,July 2025,955720434,404433498
+Miscellaneous merchant wholesalers,August 2025,550237448,392202889
+"Business-to-business electronic markets, and agents and brokers",January 2024,0,0
+"Business-to-business electronic markets, and agents and brokers",February 2024,0,0
+"Business-to-business electronic markets, and agents and brokers",March 2024,0,0
+"Business-to-business electronic markets, and agents and brokers",April 2024,0,0
+"Business-to-business electronic markets, and agents and brokers",May 2024,0,0
+"Business-to-business electronic markets, and agents and brokers",June 2024,0,0
+"Business-to-business electronic markets, and agents and brokers",July 2024,0,0
+"Business-to-business electronic markets, and agents and brokers",August 2024,0,0
+"Business-to-business electronic markets, and agents and brokers",September 2024,0,0
+"Business-to-business electronic markets, and agents and brokers",October 2024,0,0
+"Business-to-business electronic markets, and agents and brokers",November 2024,0,0
+"Business-to-business electronic markets, and agents and brokers",December 2024,0,0
+"Business-to-business electronic markets, and agents and brokers",January 2025,0,0
+"Business-to-business electronic markets, and agents and brokers",February 2025,0,0
+"Business-to-business electronic markets, and agents and brokers",March 2025,0,0
+"Business-to-business electronic markets, and agents and brokers",April 2025,0,0
+"Business-to-business electronic markets, and agents and brokers",May 2025,0,0
+"Business-to-business electronic markets, and agents and brokers",June 2025,0,0
+"Business-to-business electronic markets, and agents and brokers",July 2025,0,0
+"Business-to-business electronic markets, and agents and brokers",August 2025,0,0

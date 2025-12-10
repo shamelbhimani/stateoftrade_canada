@@ -1,0 +1,233 @@
+﻿Country,Date,Import,Export,Trade Balance
+All countries,January 2025,69634.7,73118.9,3484.2
+All countries,February 2025,70491.9,68844.6,-1647.2
+All countries,March 2025,69740.4,67566.8,-2173.6
+All countries,April 2025,67532.1,60001.9,-7530.2
+All countries,May 2025,66754.8,61166.2,-5588.6
+All countries,June 2025,67165.8,61553.7,-5612.1
+All countries,July 2025,66279.2,62454.8,-3824.3
+All countries,August 2025,66908.4,60584.3,-6324.2
+United States,January 2025,42822.3,56827.2,14005
+United States,February 2025,44131.9,54661.7,10529.9
+United States,March 2025,42604.5,49728,7123.5
+United States,April 2025,38571.1,41852.9,3281.8
+United States,May 2025,38533,42082.5,3549.5
+United States,June 2025,39183.1,43272.4,4089.3
+United States,July 2025,38304.6,45719.7,7415
+United States,August 2025,37750.3,44182.4,6432.1
+European Union 7,January 2025,6139.5,3228.7,-2910.9
+European Union 7,February 2025,6105.9,2770.2,-3335.7
+European Union 7,March 2025,6495.2,3633.8,-2861.4
+European Union 7,April 2025,6459.7,3304.5,-3155.2
+European Union 7,May 2025,6396.5,3517.7,-2878.9
+European Union 7,June 2025,6471,3572.5,-2898.4
+European Union 7,July 2025,6341.6,3289.3,-3052.3
+European Union 7,August 2025,6930.2,3141.5,-3788.7
+Germany,January 2025,1520.8,691.3,-829.4
+Germany,February 2025,1637.9,447.1,-1190.7
+Germany,March 2025,1677.9,688.6,-989.4
+Germany,April 2025,1718.8,704.6,-1014.2
+Germany,May 2025,1569,668.8,-900.2
+Germany,June 2025,1614.5,663.3,-951.2
+Germany,July 2025,1737.6,960.9,-776.7
+Germany,August 2025,1796.5,650.3,-1146.2
+Netherlands,January 2025,664.6,667,2.3
+Netherlands,February 2025,479.9,589.2,109.2
+Netherlands,March 2025,631.5,936.6,305
+Netherlands,April 2025,532.8,861.3,328.5
+Netherlands,May 2025,546,798.2,252.2
+Netherlands,June 2025,511.4,790.5,279.1
+Netherlands,July 2025,455.6,544.5,88.9
+Netherlands,August 2025,502.6,655.8,153.2
+France,January 2025,580.8,383.8,-197
+France,February 2025,539.2,306.7,-232.5
+France,March 2025,596.5,452.3,-144.2
+France,April 2025,569,361.6,-207.5
+France,May 2025,560.2,299.5,-260.6
+France,June 2025,588.8,367.3,-221.5
+France,July 2025,495.8,421.9,-73.8
+France,August 2025,766.2,382.6,-383.6
+Italy,January 2025,803.8,310.5,-493.4
+Italy,February 2025,754.8,203.4,-551.4
+Italy,March 2025,908.3,249.4,-658.9
+Italy,April 2025,805.4,233.7,-571.6
+Italy,May 2025,820.9,406,-414.9
+Italy,June 2025,919.3,324.3,-595
+Italy,July 2025,909,233.4,-675.6
+Italy,August 2025,857.5,391.3,-466.2
+Belgium,January 2025,485.3,298.2,-187.1
+Belgium,February 2025,670.9,342.8,-328.2
+Belgium,March 2025,737.3,358.5,-378.8
+Belgium,April 2025,558.4,294.4,-264
+Belgium,May 2025,730.5,352.1,-378.4
+Belgium,June 2025,541.6,362.5,-179.1
+Belgium,July 2025,591.1,308.3,-282.8
+Belgium,August 2025,760.6,312.4,-448.2
+Spain,January 2025,305,220.4,-84.6
+Spain,February 2025,303,205.5,-97.4
+Spain,March 2025,351.8,189.4,-162.4
+Spain,April 2025,412.7,213.3,-199.3
+Spain,May 2025,357.9,249.6,-108.3
+Spain,June 2025,403,327.9,-75.1
+Spain,July 2025,344.1,131.4,-212.7
+Spain,August 2025,339.9,190.8,-149.2
+China,January 2025,5423.7,3000.8,-2422.9
+China,February 2025,5243.8,2776.6,-2467.2
+China,March 2025,5667.1,2724.7,-2942.4
+China,April 2025,5824.5,3020.6,-2803.9
+China,May 2025,5941.5,2309.2,-3632.3
+China,June 2025,5776.4,2607.3,-3169.1
+China,July 2025,5619.9,2719,-2900.9
+China,August 2025,5449.5,2602,-2847.5
+United Kingdom,January 2025,1073.9,2755.2,1681.4
+United Kingdom,February 2025,1160.5,1950.3,789.8
+United Kingdom,March 2025,853.1,3782.9,2929.8
+United Kingdom,April 2025,1594,4135.6,2541.6
+United Kingdom,May 2025,770,5329.5,4559.6
+United Kingdom,June 2025,752.3,4270.3,3518
+United Kingdom,July 2025,787.1,3042,2254.8
+United Kingdom,August 2025,720.3,3542,2821.7
+Mexico,January 2025,2521.9,746.9,-1775
+Mexico,February 2025,2680.3,776.6,-1903.7
+Mexico,March 2025,2769.1,800.3,-1968.8
+Mexico,April 2025,2924.5,783.8,-2140.7
+Mexico,May 2025,2819.4,741.5,-2077.8
+Mexico,June 2025,3120.9,745.8,-2375.1
+Mexico,July 2025,3057,761.2,-2295.9
+Mexico,August 2025,3206.2,768.4,-2437.8
+Japan,January 2025,1417.2,1279.9,-137.3
+Japan,February 2025,1227.8,1219,-8.9
+Japan,March 2025,1372.1,1266.1,-106
+Japan,April 2025,1234.3,1247.2,13
+Japan,May 2025,1287.9,1298.9,11
+Japan,June 2025,1257.4,1109.1,-148.3
+Japan,July 2025,1401.3,1361.7,-39.6
+Japan,August 2025,1311.9,1144.4,-167.5
+South Korea,January 2025,1587.7,481.2,-1106.5
+South Korea,February 2025,1195.8,589.5,-606.3
+South Korea,March 2025,1202.4,779,-423.4
+South Korea,April 2025,1398.6,583.3,-815.2
+South Korea,May 2025,1357.9,619.8,-738.1
+South Korea,June 2025,1305,661.2,-643.8
+South Korea,July 2025,1416.4,554,-862.4
+South Korea,August 2025,1134,505.7,-628.3
+Hong Kong,January 2025,340.7,207.5,-133.2
+Hong Kong,February 2025,312.9,101.5,-211.3
+Hong Kong,March 2025,346.5,366,19.5
+Hong Kong,April 2025,383.4,320.8,-62.6
+Hong Kong,May 2025,355.9,181,-174.9
+Hong Kong,June 2025,358.8,383.9,25.2
+Hong Kong,July 2025,333.8,299.2,-34.6
+Hong Kong,August 2025,316.4,488.3,171.9
+Brazil,January 2025,979,254.3,-724.8
+Brazil,February 2025,824.6,229.4,-595.3
+Brazil,March 2025,873.6,182,-691.5
+Brazil,April 2025,1042.3,300.7,-741.6
+Brazil,May 2025,636.9,261.3,-375.6
+Brazil,June 2025,895.8,244.6,-651.2
+Brazil,July 2025,861.4,300.9,-560.5
+Brazil,August 2025,593.6,243.1,-350.4
+Algeria,January 2025,3.5,142.1,138.6
+Algeria,February 2025,56.6,112.9,56.3
+Algeria,March 2025,9.1,118.9,109.8
+Algeria,April 2025,28.1,265.5,237.5
+Algeria,May 2025,60.8,152.6,91.8
+Algeria,June 2025,29.8,56.9,27.1
+Algeria,July 2025,19,124.6,105.7
+Algeria,August 2025,2.9,15.8,12.9
+Norway,January 2025,103.8,156.6,52.7
+Norway,February 2025,48.9,186.6,137.7
+Norway,March 2025,61.7,295.4,233.6
+Norway,April 2025,151.3,230.6,79.3
+Norway,May 2025,308.2,154.5,-153.7
+Norway,June 2025,101.6,147.3,45.8
+Norway,July 2025,219.2,31.4,-187.9
+Norway,August 2025,129.2,145.1,15.9
+India,January 2025,622.3,293.1,-329.2
+India,February 2025,603.3,293.5,-309.8
+India,March 2025,609.3,278.6,-330.7
+India,April 2025,510.8,283.7,-227
+India,May 2025,678.9,331.6,-347.2
+India,June 2025,584.4,284.3,-300.1
+India,July 2025,551.6,355.7,-195.9
+India,August 2025,607.9,348.8,-259.2
+Switzerland,January 2025,751.7,90.8,-660.9
+Switzerland,February 2025,726.8,50.1,-676.7
+Switzerland,March 2025,629.3,49.6,-579.7
+Switzerland,April 2025,799.9,156.7,-643.2
+Switzerland,May 2025,1098.4,244.8,-853.6
+Switzerland,June 2025,674.6,144.8,-529.8
+Switzerland,July 2025,742.7,156,-586.7
+Switzerland,August 2025,1845.6,179.8,-1665.8
+Saudi Arabia,January 2025,250.2,51.6,-198.6
+Saudi Arabia,February 2025,242.1,83.5,-158.7
+Saudi Arabia,March 2025,229.5,84.8,-144.7
+Saudi Arabia,April 2025,211,66.5,-144.5
+Saudi Arabia,May 2025,210.1,160.8,-49.4
+Saudi Arabia,June 2025,227.2,268,40.8
+Saudi Arabia,July 2025,114.6,117.1,2.5
+Saudi Arabia,August 2025,106.7,86.5,-20.1
+Türkiye,January 2025,272,88.8,-183.2
+Türkiye,February 2025,168.2,55.6,-112.6
+Türkiye,March 2025,145.1,74.2,-70.8
+Türkiye,April 2025,238.4,96.7,-141.7
+Türkiye,May 2025,162,68.3,-93.7
+Türkiye,June 2025,228,199.4,-28.6
+Türkiye,July 2025,223.9,44.4,-179.5
+Türkiye,August 2025,195.7,44.6,-151.2
+Taiwan,January 2025,391.4,173.2,-218.2
+Taiwan,February 2025,373.2,137.8,-235.5
+Taiwan,March 2025,388.4,209.9,-178.5
+Taiwan,April 2025,373.9,158.5,-215.4
+Taiwan,May 2025,469,167.7,-301.3
+Taiwan,June 2025,388.6,146.5,-242.1
+Taiwan,July 2025,411.7,144.8,-266.9
+Taiwan,August 2025,353.4,171.7,-181.7
+Peru,January 2025,647.4,186,-461.4
+Peru,February 2025,486.5,96.8,-389.8
+Peru,March 2025,492.2,204.5,-287.7
+Peru,April 2025,541.4,193.8,-347.6
+Peru,May 2025,502,92.4,-409.6
+Peru,June 2025,572.7,75.7,-497
+Peru,July 2025,502.3,149.9,-352.4
+Peru,August 2025,624.8,59.9,-564.9
+Australia,January 2025,246.5,226.4,-20.1
+Australia,February 2025,281.7,199.9,-81.7
+Australia,March 2025,273.2,348.9,75.7
+Australia,April 2025,306.9,250.2,-56.7
+Australia,May 2025,273.2,319.9,46.7
+Australia,June 2025,204.4,351.5,147
+Australia,July 2025,284.8,217.5,-67.2
+Australia,August 2025,209,253,44.1
+Iraq,January 2025,0,10,9.9
+Iraq,February 2025,0.2,5,4.8
+Iraq,March 2025,0,6.5,6.5
+Iraq,April 2025,0,17.1,17
+Iraq,May 2025,0,11,11
+Iraq,June 2025,1,8.3,7.3
+Iraq,July 2025,0.1,4.5,4.3
+Iraq,August 2025,0,10.8,10.8
+Indonesia,January 2025,168.1,308.7,140.6
+Indonesia,February 2025,164.3,108.7,-55.6
+Indonesia,March 2025,214.9,288.3,73.3
+Indonesia,April 2025,233.4,244,10.6
+Indonesia,May 2025,257.6,393.6,136
+Indonesia,June 2025,197.1,276.7,79.6
+Indonesia,July 2025,215,218.2,3.2
+Indonesia,August 2025,185.3,196.7,11.4
+Singapore,January 2025,169.3,246.6,77.3
+Singapore,February 2025,141.9,275.5,133.6
+Singapore,March 2025,296.7,175,-121.6
+Singapore,April 2025,349.4,199.3,-150.1
+Singapore,May 2025,335.5,418.3,82.8
+Singapore,June 2025,304.9,316.6,11.7
+Singapore,July 2025,239.4,364.1,124.7
+Singapore,August 2025,257.9,180,-77.9
+Russian Federation,January 2025,0.6,1.3,0.7
+Russian Federation,February 2025,0.3,3.2,2.9
+Russian Federation,March 2025,0.4,1.3,0.9
+Russian Federation,April 2025,0.8,1,0.2
+Russian Federation,May 2025,3.9,3.2,-0.7
+Russian Federation,June 2025,2,2,0
+Russian Federation,July 2025,1.5,8.4,6.9
+Russian Federation,August 2025,1.1,4.1,3.1
