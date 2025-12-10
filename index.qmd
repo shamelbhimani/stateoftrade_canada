@@ -1,0 +1,2224 @@
+---
+title: "Descriptive Analysis on Canada's International Merchandise Balance of Trade in the Face of the Trump Tariffs"
+author: "Shamel Bhimani"
+date: "`r Sys.Date()`"
+format:
+  html:
+    grid:
+      sidebar-width: 180px
+      body-width: 1600px
+      margin-width: 180px
+      gutter-width: 1.5rem
+    toc: true
+    toc-location: right
+    code-fold: true
+    code-tools: false
+    code-line-numbers: true
+    smooth-scroll: true
+    link-external-newwindow: true
+    anchor-sections: true
+    page-layout: full
+    fig-format: retina
+    embed-resources: true
+execute:
+  warning: false
+  message: false
+  fig-width: 14
+  fig-height: 10
+knitr:
+  opts_chunk: 
+    dev: "png"
+    fig.interactive: true
+editor: visual
+bibliography: references.bib
+---
+
+```{R}
+#| echo: false
+
+#Note: This is forked from hrbrthemes by Bob Rudis. Forking was preferred over importing the library to maintain a smaller file size.
+theme_ipsum_es <- function(
+    base_family="EconSansCndReg", base_size = 11.5,
+    plot_title_family="EconSansCndBol", plot_title_size = 18,
+    plot_title_face="bold", plot_title_margin = 10,
+    subtitle_family=if (.Platform$OS.type == "windows") "EconSansCndLig" else "EconSansCndLig",
+    subtitle_size = 13,
+    subtitle_face = "plain", subtitle_margin = 15,
+    strip_text_family = base_family, strip_text_size = 12,
+    strip_text_face = "plain",
+    caption_family=if (.Platform$OS.type == "windows") "EconSansCndLig" else "EconSansCndLig",
+    caption_size = 9,
+    caption_face = "plain", caption_margin = 10,
+    axis_text_size = base_size,
+    axis_title_family = base_family,
+    axis_title_size = 9,
+    axis_title_face = "plain",
+    axis_title_just = "rt",
+    plot_margin = margin(30, 30, 30, 30),
+    panel_spacing = grid::unit(2, "lines"),
+    grid_col = "#cccccc", grid = TRUE,
+    axis_col = "#cccccc", axis = FALSE, ticks = FALSE) {
+  
+  ret <- ggplot2::theme_minimal(base_family = base_family, base_size = base_size)
+  
+  ret <- ret + theme(legend.background = element_blank())
+  ret <- ret + theme(legend.key = element_blank())
+  
+  ret <- ret + theme(plot.margin = plot_margin)
+  ret <- ret + theme(panel.spacing = panel_spacing)
+  
+  if (inherits(grid, "character") | grid == TRUE) {
+    ret <- ret + theme(panel.grid = element_line(color = grid_col, linewidth = 0.2))
+    ret <- ret + theme(panel.grid.major = element_line(color = grid_col, linewidth = 0.2))
+    ret <- ret + theme(panel.grid.minor = element_line(color = grid_col, linewidth = 0.15))
+    
+    if (inherits(grid, "character")) {
+      if (regexpr("X", grid)[1] < 0) ret <- ret + theme(panel.grid.major.x = element_blank())
+      if (regexpr("Y", grid)[1] < 0) ret <- ret + theme(panel.grid.major.y = element_blank())
+      if (regexpr("x", grid)[1] < 0) ret <- ret + theme(panel.grid.minor.x = element_blank())
+      if (regexpr("y", grid)[1] < 0) ret <- ret + theme(panel.grid.minor.y = element_blank())
+    }
+  } else {
+    ret <- ret + theme(panel.grid = element_blank())
+    ret <- ret + theme(panel.grid.major  = element_blank())
+    ret <- ret + theme(panel.grid.major.x  = element_blank())
+    ret <- ret + theme(panel.grid.major.y  = element_blank())
+    ret <- ret + theme(panel.grid.minor  = element_blank())
+    ret <- ret + theme(panel.grid.minor.x  = element_blank())
+    ret <- ret + theme(panel.grid.minor.y  = element_blank())
+  }
+  
+  if (inherits(axis, "character") | axis == TRUE) {
+    ret <- ret + theme(axis.line = element_line(color = axis_col, linewidth = 0.15))
+    if (inherits(axis, "character")) {
+      axis <- tolower(axis)
+      if (regexpr("x", axis)[1] < 0) {
+        ret <- ret + theme(axis.line.x = element_blank())
+      } else {
+        ret <- ret + theme(axis.line.x = element_line(color = axis_col, linewidth = 0.15))
+      }
+      if (regexpr("y", axis)[1] < 0) {
+        ret <- ret + theme(axis.line.y = element_blank())
+      } else {
+        ret <- ret + theme(axis.line.y = element_line(color = axis_col, linewidth = 0.15))
+      }
+    } else {
+      ret <- ret + theme(axis.line.x = element_line(color = axis_col, linewidth = 0.15))
+      ret <- ret + theme(axis.line.y = element_line(color = axis_col, linewidth = 0.15))
+    }
+  } else {
+    ret <- ret + theme(axis.line = element_blank())
+  }
+  
+  if (!ticks) {
+    ret <- ret + theme(axis.ticks = element_blank())
+    ret <- ret + theme(axis.ticks.x = element_blank())
+    ret <- ret + theme(axis.ticks.y = element_blank())
+  } else {
+    ret <- ret + theme(axis.ticks = element_line(linewidth = 0.15))
+    ret <- ret + theme(axis.ticks.x = element_line(linewidth = 0.15))
+    ret <- ret + theme(axis.ticks.y = element_line(linewidth = 0.15))
+    ret <- ret + theme(axis.ticks.length = grid::unit(5, "pt"))
+  }
+  
+  xj <- switch(tolower(substr(axis_title_just, 1, 1)), b = 0, l = 0, m = 0.5, c = 0.5, r = 1, t = 1)
+  yj <- switch(tolower(substr(axis_title_just, 2, 2)), b = 0, l = 0, m = 0.5, c = 0.5, r = 1, t = 1)
+  
+  ret <- ret + theme(axis.text = element_text(size = axis_text_size, margin = margin(t = 0, r = 0)))
+  ret <- ret + theme(axis.text.x = element_text(size = axis_text_size, margin = margin(t = 0)))
+  ret <- ret + theme(axis.text.y = element_text(size = axis_text_size, margin = margin(r = 0)))
+  
+  ret <- ret + theme(axis.title = element_text(size = axis_title_size, family = axis_title_family))
+  ret <- ret + theme(axis.title.x = element_text(
+    hjust = xj, size = axis_title_size,
+    family = axis_title_family, face = axis_title_face
+  ))
+  ret <- ret + theme(axis.title.y = element_text(
+    hjust = yj, size = axis_title_size,
+    family = axis_title_family, face = axis_title_face
+  ))
+  ret <- ret + theme(axis.title.y.right = element_text(
+    hjust = yj, size = axis_title_size, angle = 90,
+    family = axis_title_family, face = axis_title_face
+  ))
+  
+  ret <- ret + theme(strip.text = element_text(
+    hjust = 0, size = strip_text_size,
+    face = strip_text_face, family = strip_text_family
+  ))
+  
+  ret <- ret + theme(plot.title = element_text(
+    hjust = 0, size = plot_title_size,
+    margin = margin(b = plot_title_margin),
+    family = plot_title_family, face = plot_title_face
+  ))
+  ret <- ret + theme(plot.subtitle = element_text(
+    hjust = 0, size = subtitle_size,
+    margin = margin(b = subtitle_margin),
+    family = subtitle_family, face = subtitle_face
+  ))
+  ret <- ret + theme(plot.caption = element_text(
+    hjust = 1, size = caption_size,
+    margin = margin(t = caption_margin),
+    family = caption_family, face = caption_face
+  ))
+  
+  ret
+  
+}
+
+import_econ_sans <- function() {
+  
+  es_font_dir <- system.file("fonts", "econ-sans", package="hrbrthemes")
+  
+  message(
+    "You will need to install these fonts on your system as well.\n\n",
+    "You can find them in [", es_font_dir, "]"
+  )
+  
+}
+
+font_es <- "EconSansCndReg"
+font_es_bold <- "EconSansCndBol"
+font_es_light <- "EconSansCndLig"
+```
+
+# Abstract
+
+This report seeks to analyze the impact of the 2025 Tariff cycle by the Trump administration and the subsequent Canadian counter-tariffs on the bilateral trade relationship between the two states. The study focuses on merchandise trade statistics, examining historical trends, the timeline as well as the industrial impact on commodities trade of affected industries in Canada as a whole. 
+
+Historically, Canada and the United States have maintained a robust, bilateral trade alliance characterized by liberalizing trade values and a widening bilateral trade surplus for Canada up to 2024. However, after the inauguration of President Trump in 2025, the administration quickly implemented sweeping and specific tariffs on all its trade partners, including Canada, which were met with rapid and retaliatory counter-tariffs. Using official trade statistics provided by Statistics Canada and tariff data from the World Trade Organization (WTO), I track the evolution of the trade balance and the specific impact of duties, at their peak, that had an applied average trade-weighted tariff burden of <b>6.62%</b> and affected nearly <b>\$70 billion USD</b> of trade value. Canada's overall trade deficit widened substantially by <b>\$53.566 billion CAD</b> between March and April. The impact on exports was significantly greater than on imports. Bilaterally, the monthly decline of Canadian exports to the U.S. more than doubled after the tariffs took effect, indicating a direct impact between trade actions and reduced volume.
+
+Further examination of affected commodity sectors reveal a varied impact: aluminum exports were severely hit, while iron and steel showed parallel declines in both exports and imports suggesting broader market-induced exogeneity alongside tariffs. This analysis confirms that the traded dispute immediately and negatively reverse Canada's historical trade trends through the first eight months of 2025.
+
+## Data Methodology
+
+```{R}
+#| echo: True
+#| code-fold: True
+
+library(tidyverse)
+
+#Prelims
+AppliedImportDuty <- read_csv('datasets/AppliedDuty_Imports.csv')
+ExportValueByCountry <- read_csv('datasets/ExportValueCADByCountry.csv')
+ImportValueByCountry <- read_csv('datasets/ImportValueCADByCountry.csv')
+TariffByProduct <- read_csv("datasets/TariffByProduct.csv")
+TradeBalance2025 <- read_csv("datasets/BalanceOfTrade2025.csv")
+
+#Cleaning
+AppliedTariffRate <- AppliedImportDuty$simple_average
+DutyFreeShare <- AppliedImportDuty$trade_weighted * 100
+TotalBalance2025 <- TradeBalance2025 %>%
+  filter(
+    Country == "All countries"
+  )
+USBalance2025 <- TradeBalance2025 %>%
+  filter(
+    Country == "United States"
+  )
+EUBalance2025 <- TradeBalance2025 %>%
+  filter(
+    Country == "European Union 7"
+  )
+
+ImportValueByCountry <- ImportValueByCountry %>%
+  filter(
+    row_number() > 27
+    ) %>%
+  separate(
+    col = `Canadian imports`,
+    into = paste0("Y", 2015:2024),
+    sep = ",",
+    convert = TRUE,
+    remove = FALSE
+  ) %>%
+  mutate(
+    across(
+      starts_with("Y"),
+      as.character
+    )
+  ) %>%
+  pivot_longer(
+    cols = starts_with("Y"),
+    names_to = "Year",
+    values_to = "Import Value (CAD)",
+  ) %>%
+  mutate(
+    Year = as.integer(
+      str_remove(Year, "Y")
+    ),
+    `Import Value (CAD)` = as.numeric(`Import Value (CAD)`)
+  ) %>%
+  arrange(
+    Title,
+    Year
+  ) %>%
+  select(-`Canadian imports`)
+
+ExportValueByCountry <- ExportValueByCountry %>%
+  filter(
+    row_number() > 28
+  ) %>%
+  rename(
+    Title = ...1,
+    Y2016 = ...2,
+    Y2017 = ...3,
+    Y2018 = ...4,
+    Y2019 = ...5,
+    Y2020 = ...6,
+    Y2021 = ...7,
+    Y2022 = ...8,
+    Y2023 = ...9,
+    Y2024 = ...10,
+    Y2025 = ...11
+  ) %>%
+  pivot_longer(
+    cols = starts_with("Y"),
+    names_to = "Year",
+    values_to = "Export Value (CAD)",
+  ) %>%
+  arrange(
+    Title,
+    Year
+  ) %>%
+  mutate(
+    Year = as.integer(
+      str_remove(Year, "Y")
+    ),
+    `Export Value (CAD)` = as.numeric(`Export Value (CAD)`)
+  )
+
+NetTrade <- ImportValueByCountry %>%
+  left_join(
+    ExportValueByCountry,
+    by = c(
+      "Title",
+      "Year"
+    ),
+    relationship = "many-to-many"
+  ) %>%
+  filter(
+    Year != 2015
+  )
+
+TariffByProduct <- TariffByProduct %>%
+  select(
+    TL,
+    Description,
+    `Base Duty`
+  ) %>%
+  mutate(
+    IsDuty = if_else(
+      `Base Duty` == "0%",
+      TRUE,
+      FALSE
+    )
+    )
+
+```
+
+Our data was sourced from two primary sources. Firstly, all official trade statistics reported on the balance sheet: imports, exports, and trade balance, were sourced from Statistics Canada [@StatCan_1210001101; @StatCan_1210016301]. Data was collected on yearly and monthly horizons on a "Balance of Payment" basis. Additionally, data was collected on the basis of trading partner, industry, and Harmonized System product codes. Secondly, data on tariffs and import duties, as well as a timeline on bilateral duty restrictions was source from the World Trade Organization Consolidated Tariff Schedule [@WTO_TTD_Canada_Section1A; @WTO_TariffActions_ReporterC124_C840; @WTO_TariffActions_ReporterC840_PartnerC124]. This data includes trade-weighted duties as well as affected trade value behest of duties on a monthly basis starting from 2025 for Canada and the United States. Yearly Import and Export tables were cleaned to address variable drift and joined on `Title` or Country and `Year` on a many-to-many basis. All other tables were retrieved in a clean state, reducing preparation time. 
+
+Note: Services were deliberately excluded as tariffs on Canadian services are not applied by the United States and are beyond the scope of this analysis.
+
+## A Note on Arc Elasticity Calculations
+
+I use <i>arc elasticity</i> for calculating the month-to-month percentage change in the value of imports and exports, especially in the volatile tariff environment. I do so for two primary reasons. Firstly the standard percentage change formula $\frac{Current - Previous}{Previous}$, produces inconsistent directional results. If the value, for example, goes from \$100 to \$150, the change is 50% in this direction., However, if we reverse this orientation, where the value goes from \$150 to \$100, the change is now -33.3%. This asymmetry is problematic for this analysis where we are attempting to track volatility and comparing the magnitude of increase versus decrease. Arc elasticity solves the problem of direction asymmetry by using the midpoint of the current and previous values as the denominator for the percentage calculation, such that $Arc = \frac{Current-Previous}{(Current-Previous)/2}$. The result is a symmetrical bidirectional change. Secondly, tariff imposition and repeal orders are discrete shocks to the trading system. They cause significant, sudden drops or spikes in trading volume, as will be demonstrated through this analysis. When the percentage change between two points is large and potentially delayed, the distortions from using the previous value as the base becomes substantial, making point elasticity an inappropriate measure. Arc elasticity provides an accurate average measure of responsiveness of trade.
+
+
+
+# The Decade of Trade
+
+## Balance of Trade
+
+```{r}
+
+TradeSummary <- NetTrade %>%
+  filter(
+    !is.na(Title),
+    Title != "Total All Countries",
+    !str_detect(Title, "^Source:")
+  ) %>%
+  group_by(Year) %>%
+  summarise(
+    Total_Imports = sum(`Import Value (CAD)`, na.rm = TRUE) / 1000000,
+    Total_Exports = sum(`Export Value (CAD)`, na.rm = TRUE) / 1000000
+  ) %>%
+  mutate(
+    Net_Trade = Total_Exports - Total_Imports,
+    Import_Plot = -Total_Imports
+  )
+
+TradePlot <- TradeSummary %>%
+  ggplot(
+    aes(
+      x = Year
+    )
+  ) +
+  geom_col(
+    aes(
+      y = Total_Exports,
+      fill = "Exports"
+    ),
+    alpha = 1,
+    width = 0.7
+  ) +
+  geom_col(
+    aes(
+      y = Import_Plot,
+      fill = "Imports"
+    ),
+    alpha = 1,
+    width = 0.7
+  ) +
+  geom_point(
+    aes(
+      y = Net_Trade
+    ),
+    color = 'white',
+    size = 9,
+    shape = 18
+  ) +
+  geom_point(
+    aes(
+      y = Net_Trade,
+      fill = "Net Trade"
+    ),
+    color = '#D27D2D',
+    size = 4,
+    shape = 23
+  ) +
+  geom_hline(
+    yintercept = 0,
+    linetype = "solid",
+    color = "black",
+    linewidth = 0.5
+  ) +
+  scale_fill_manual(
+    name = NULL,
+    values = c(
+      "Exports" = "#169982", 
+      "Imports" = "#EB414D", 
+      "Net Trade" = "#D27D2D"
+      )
+  ) +
+  labs(
+    title = "Canada's International Merchandise Balance of Trade (2016-2024)",
+    subtitle = "in millions of dollars (CAD)",
+    x = "Year",
+    y = "Trade Value (CAD)",
+    caption = "Net Trade = Exports - Imports",
+    tag = "Source: Statistics Canada"
+  ) +
+  scale_x_continuous(
+    breaks = unique(TradeSummary$Year)
+  ) +
+  scale_y_continuous(
+    labels = function(x) scales::comma(abs(x))
+  ) +
+  theme_ipsum_es() +
+  theme(
+    axis.text.x = element_text(angle = 0),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    plot.tag.position = "bottom",
+    plot.tag = element_text(hjust = 0),
+    legend.position = "top",
+    legend.justification = "left",
+    legend.direction = "horizontal"
+  )
+TradePlot
+```
+
+Canada's historical balance of trade data suggests that Canada had been struggling with a trade deficit which corrected temporarily in 2020. However, due to COVID-imposed lock downs and supply-chain restrictions, Canada's International Merchandise Balance of Trade continued into the negative, only temporarily recovering in 2023. 2024 saw a contiuation of the negative balance trend. 
+
+
+
+## Our Principal Trade Partners
+
+```{r}
+library(plotly)
+library(htmlwidgets) # Added after prompt. See line: 143 in code
+library(webshot2) # Same as above. See line: 143 in codeblock.
+
+NetTrade_clean <- NetTrade %>%
+  filter(
+    !str_detect(Title, regex("Total|All Countries|World", ignore_case = TRUE))
+  )
+
+totals <- NetTrade_clean %>%
+  group_by(Title) %>%
+  summarise(
+    TotalExports = sum(`Export Value (CAD)`, na.rm = TRUE),
+    TotalImports = sum(`Import Value (CAD)`, na.rm = TRUE)
+  )
+
+top_exports <- totals %>%
+  select(
+    -TotalImports
+  ) %>%
+  arrange(
+    desc(TotalExports)
+    ) %>% 
+  slice(1:7)
+top_imports <- totals %>%
+  select(
+    -TotalExports
+    ) %>%
+  arrange(
+    desc(TotalImports)
+    ) %>% 
+  slice(1:7)
+
+format_billions <- function(x) {
+  paste0("($", round(x / 1e9, 1), "B)")
+}
+
+total_trade_value <- sum(top_exports$TotalExports) + sum(top_imports$TotalImports)
+
+node_names <- c(
+  "IMPORTS ←",
+  paste0(top_imports$Title, " ", format_billions(top_imports$TotalImports)),
+  paste0("Total Trade Value", " ", format_billions(total_trade_value)),
+  "→ EXPORTS",
+  paste0(top_exports$Title, " ", format_billions(top_exports$TotalExports))
+)
+
+nodes <- data.frame(
+  label = node_names,
+  color = c(
+    "rgba(200, 200, 200, 0.3)",
+    rep("rgba(220, 53, 69, 0.8)", length(top_imports$Title)),
+    "rgba(255, 193, 7, 0.8)",
+    "rgba(200, 200, 200, 0.3)",
+    rep("rgba(40, 167, 69, 0.8)", length(top_exports$Title))
+  )
+)
+
+links <- data.frame(
+  source = c(
+    1:(length(top_imports$Title)),
+    rep(length(top_imports$Title) + 1, length(top_exports$Title))
+  ),
+  target = c(
+    rep(length(top_imports$Title) + 1, length(top_imports$Title)),
+    (length(top_imports$Title) + 3):(length(top_imports$Title) + 2 + length(top_exports$Title))
+  ),
+  value = c(top_imports$TotalImports, top_exports$TotalExports),
+  color = c(
+    rep("rgba(220, 53, 69, 0.4)", length(top_imports$Title)),
+    rep("rgba(40, 167, 69, 0.4)", length(top_exports$Title))
+  )
+)
+
+fig <- plot_ly(
+  type = "sankey",
+  orientation = "h",
+  node = list(
+    label = nodes$label,
+    color = nodes$color,
+    pad = 15,
+    thickness = 20,
+    line = list(color = "white", width = 0.5)
+  ),
+  link = list(
+    source = links$source,
+    target = links$target,
+    value = links$value,
+    color = links$color
+  )
+)
+
+
+fig <- fig %>% layout(
+  title = list(
+    text = "<b>Canada's International Merchandise Balance of Trade by Principal Trading Partner (2016-2024)</b><br><sup>In billions of dollars (CAD)</sup>",
+    font = list(
+      family = "Arial Narrow, sans-serif",
+      size = 18,
+      color = "#2b2b2b"
+    ),
+    x = 0,
+    xanchor = "left",
+    xref = "paper"
+  ),
+  font = list(
+    family = "Arial Narrow, sans-serif",
+    size = 14,
+    color = "#2b2b2b"
+  ),
+  margin = list(l = 50, r = 50, t = 80, b = 80),
+  # Below added after Prompt. See line: 143 in codeblock.
+  annotations = list(
+    list(
+      x = 0.05,
+      y = -0.08,
+      xref = "paper",
+      yref = "paper",
+      text = "<b>IMPORTS</b>",
+      showarrow = FALSE,
+      font = list(
+        family = "Arial Narrow, sans-serif",
+        size = 14,
+        color = "#dc3545"
+      ),
+      xanchor = "left"
+    ),
+    list(
+      x = 0.95,
+      y = -0.08,
+      xref = "paper",
+      yref = "paper",
+      text = "<b>EXPORTS</b>",
+      showarrow = FALSE,
+      font = list(
+        family = "Arial Narrow, sans-serif",
+        size = 14,
+        color = "#28a745"
+      ),
+      xanchor = "right"
+    )
+  )
+)
+
+# The code below was generated by AI. I made changes to the figure in the code above later on.
+# Prompt: "how do i make plotly graphs non-interactive images in quarto without changing anything in my codebase?"
+saveWidget(
+  fig, 
+  "temp_sankey.html", 
+  selfcontained = TRUE
+)
+
+webshot2::webshot(
+  "temp_sankey.html",
+  "sankey_plot.png", 
+  vwidth = 1200, 
+  vheight = 800
+)
+```
+
+Our trading partners are vary based on which class of the balance sheet we are analyzing. Our primary import partners, over the last 10 years, have been the United States, China, Mexico, Germany, Japan, South Korea, and Italy, with a majority of our imports coming from the United States, China, and Mexico. Our primary export partners, over the last 10 years have been the United States, China, the United Kingdom, Japan, Mexico, South Korea and Germany, with the United States. The total trade value, i.e., imports plus exports, over the last 10 years equals nearly 9 trillion dollars (CAD), 8.94 trillion to be precise.
+
+## Bilateral Trade with the US before Donald Trump Took Office
+
+```{r}
+US_Imports <- NetTrade_clean %>%
+  filter(
+    Title == "United States",
+    !is.na(`Export Value (CAD)`),
+    !is.na(`Import Value (CAD)`)
+  ) %>%
+  mutate(
+    Year = as.numeric(Year),
+    Exports = `Export Value (CAD)`,
+    Imports = `Import Value (CAD)`
+  )
+
+USImportsTotal <- sum(US_Imports$Imports)
+USExportsTotal <- sum(US_Imports$Exports)
+
+BilateralPlot <- US_Imports %>%
+  ggplot(
+    aes(
+      x = Year
+    ) 
+  ) +
+  geom_line(
+    aes(
+      y = Exports / 1000000,
+      color = "Import of Canadian Goods By the US"
+    ),
+    linewidth = 1.2
+  ) +
+  geom_line(
+    aes(
+      y = Imports / 1000000,
+      color = "Import of US Goods By Canada"
+    ),
+    linewidth = 1.2
+  ) +
+  geom_point(
+    aes(
+      y = Exports / 1000000,
+      color = "Import of Canadian Goods By the US"
+    ),
+    size = 2
+  ) +
+  geom_point(
+    aes(
+      y = Imports / 1000000,
+      color = "Import of US Goods By Canada"
+    ),
+    size = 2
+  ) +
+  geom_ribbon(
+    aes(
+      ymin = Imports / 1000000,
+      ymax = Exports / 1000000,
+      fill = "Balance Surplus"
+    ),
+    alpha = 0.05
+  ) +
+  scale_color_manual(
+    name = NULL,
+    values = c(
+      "Import of Canadian Goods By the US" = "#169982",
+      "Import of US Goods By Canada" = "#EB414D"
+    )
+  ) +
+    scale_fill_manual(
+      name = NULL,
+      values = c("Balance Surplus" = "#169982")
+    ) +
+  labs(
+    title = "Canada-US Bilateral Imports (2016-2024)",
+    subtitle = "in millions of dollars (CAD)",
+    x = "Year",
+    y = "Trade Value (CAD)",
+    tag = "Source: Statistics Canada"
+    ) +
+  scale_x_continuous(
+    breaks = seq(2016, 2024, 1)
+    ) +
+  scale_y_continuous(
+    labels = scales::comma
+  ) +
+  theme_ipsum_es() +
+  theme(
+    axis.text.x = element_text(angle = 0),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    plot.tag.position = "bottom",
+    plot.tag = element_text(hjust = 0),
+    legend.position = "top",
+    legend.justification = "left",
+    legend.direction = "horizontal"
+  )
+
+BilateralPlot
+
+```
+
+Canada's bilateral trade relationship with the United States was flourishing prior to the the Trump administration's latest round of tariffs going in place in 2025. Imports and export were consistently growing overtime, less the COVID blip, and the surplus was widening. Exports post-COVID far exceeded the rate of change of imports, widening the bilateral trade surplus.
+
+# Tariffs Complicate the Relationship
+
+## Timeline of Events
+
+### American Timeline
+
+```{r}
+library(readODS)
+
+USTimeline <- read_ods('datasets/TariffTimelineUS.ods')
+USTimeline <- USTimeline %>%
+  mutate(
+    Date = mdy(Date),
+    y = if_else(
+      row_number() %% 2 == 1, 0.6,-0.6
+    ),
+    label = paste0(
+      format(
+        Date, "%b %d"
+      ),
+      ": ",
+      Event
+    )
+  )
+
+date_min <- min(USTimeline$Date, na.rm = TRUE)
+date_max <- max(USTimeline$Date, na.rm = TRUE)
+
+USTimelinePlot <- USTimeline %>%
+  ggplot(
+    aes(
+      x = Date,
+      y = 0,
+      label = label
+    )
+  ) +
+  geom_hline(
+    yintercept = 0,
+    color = "#0047AB",
+    size = 0.6,
+    alpha = 0.7
+  ) +
+  geom_segment(
+    aes(
+      y = y * 0.9,
+      yend = 0,
+      xend = Date
+    ),
+    color = "#0047AB",
+    size = 0.5,
+    alpha = 0.7
+  ) +
+  geom_point(
+    aes(
+      y = 0
+    ),
+    color = "#FF0000",
+    size = 3,
+    fill = "#FFFFFF",
+    shape = 21,
+    stroke = 1.5
+  ) +
+  geom_text(
+    aes(
+      y = y,
+      vjust = if_else(
+        y > 0, -0.5, 1.5
+      )
+    ),
+    angle = 45,
+    size = 3.5,
+    color = "#333333"
+  ) +
+  scale_x_date(
+    limits = c(date_min - 10, date_max + 15)
+  ) +
+  scale_y_continuous(
+    limits = c(-2, 2)
+  ) +
+  labs(
+    title = "Timeline of US Tariff Policy Changes (2025)",
+    x = ""
+  ) + 
+  theme_ipsum_es() +
+  theme(
+    axis.title.y = element_blank(),
+    axis.text.y = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    axis.text.x = element_blank()
+  )
+USTimelinePlot
+```
+
+
+With Donald Trump being officially inaugurated as the 47th President of the United States (POTUS) on January 20th, the administration took little time to impose tariffs on several trading partners, including Canada. Sweeping tariffs were imposed on all products in early March with tariffs on steel and aluminum imports to follow. Additional tariffs were imposed on vehicles and auto parts in Q2 of the year and the tariffs on Steel and Aluminum imports to the United States were doubled. On August 1st, the sweeping tariff rate was increased to 35% and a 50% duty was applied to copper and copper derivatives.
+
+### Canadian Timeline
+
+```{r}
+
+CATimeline <- read_ods('datasets/TariffTimelineCanada.ods')
+CATimeline <- CATimeline %>%
+  mutate(
+    Date = as.Date(Date)
+  ) %>%
+  filter(!is.na(Date), !is.na(Event)) %>%
+  mutate(
+    y = if_else(
+      row_number() %% 2 == 1, 0.5, -0.5
+    ),
+    label = paste0(
+      format(Date, "%b %d"),
+      ": ",
+      Event
+    )
+  )
+
+date_min <- min(CATimeline$Date, na.rm = TRUE)
+date_max <- max(CATimeline$Date, na.rm = TRUE)
+
+CATimelinePlot <- CATimeline %>%
+  ggplot(
+    aes(
+      x = Date,
+      y = 0,
+      label = label
+    )
+  ) +
+  geom_hline(
+    yintercept = 0,
+    color = "#0047AB",
+    size = 0.6,
+    alpha = 0.7
+  ) +
+  geom_segment(
+    aes(
+      y = y * 0.9,
+      yend = 0,
+      xend = Date
+    ),
+    color = "#0047AB",
+    size = 0.5,
+    alpha = 0.7
+  ) +
+  geom_point(
+    aes(
+      y = 0
+    ),
+    color = "#FF0000",
+    size = 3,
+    fill = "#FFFFFF",
+    shape = 21,
+    stroke = 1.5
+  ) +
+  geom_text(
+    aes(
+      y = y,
+      vjust = if_else(
+        y > 0, -0.5, 1.5
+      )
+    ),
+    angle = 45,
+    size = 3.5,
+    color = "#333333"
+  ) +
+  scale_x_date(
+    limits = c(date_min - 10, date_max + 10)
+  ) +
+  scale_y_continuous(
+    limits = c(-2, 2)
+  ) +
+  labs(
+    title = "Timeline of Canadian Tariff Policy Changes (2025)",
+    x = "",
+  ) + 
+  theme_ipsum_es() +
+  theme(
+    axis.title.y = element_blank(),
+    axis.text.y = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    axis.text.x = element_blank()
+    )
+CATimelinePlot
+
+```
+
+
+Canada, however, refused to sit hat-in-hand and responded with its own series of counter-tariffs and duties. 25% counter-tariffs were applied to a selection of over 1,200 products the same day the Trump administration applied its sweeping tariffs. Additionally, the day after the Trump administration announced its steel and aluminum tariffs, Canada responded with matching tariffs on steel and aluminum imports, as well as a selection of other products. April saw the application of a 25% tariff on vehicle imports from the United States, less than a week after the Trump administration applied similar tariffs of its own. On July 31st, over a month after the United States's 50% tariff on steel and aluminum products, Canada applied a 25% tariff on steel and aluminum imports from the United States On September 1st, however, after significant consultations with the Trump administration, Canada dropped its tariffs placed earlier in March, maintaining steel, aluminum and auto tariffs [see @Canada2025_PC2025-0637].
+
+## Sweeping the Products
+
+```{r}
+
+library(ggplot2)
+library(dplyr)
+
+TariffByProduct_filtered <- TariffByProduct %>%
+  filter(
+    nchar(TL) == 8,
+    !is.na(IsDuty)
+  )
+
+TotalProductsHS12 <- nrow(TariffByProduct_filtered)
+TariffedProducts <- sum(TariffByProduct_filtered$IsDuty == TRUE)
+TariffedProductsProp <- (TariffedProducts / TotalProductsHS12) * 100
+NonTariffedProductsProp <- 100 - TariffedProductsProp
+
+rows <- 10
+cols <- 10
+total_cells <- rows * cols
+
+waffle_df <- expand.grid(
+  x = 1:cols,
+  y = 1:rows
+) %>%
+  mutate(
+    cell_num = (y - 1) * cols + x,
+    fill_amount = case_when(
+      cell_num <= floor(TariffedProductsProp) ~ 1,
+      cell_num == ceiling(TariffedProductsProp) ~ TariffedProductsProp %% 1,
+      TRUE ~ 0
+    ),
+    category = case_when(
+      fill_amount == 1 ~ "Tariffed Products",
+      fill_amount > 0 & fill_amount < 1 ~ "Partial",
+      TRUE ~ "Non-Tariffed Products"
+    )
+  )
+
+full_tariffed <- waffle_df %>% filter(category == "Tariffed Products")
+non_tariffed <- waffle_df %>% filter(category == "Non-Tariffed Products")
+partial_cell <- waffle_df %>% filter(category == "Partial")
+
+legend_df <- data.frame(
+  x = c(NA, NA),
+  y = c(NA, NA),
+  category = c("Tariffed Products", "Non-Tariffed Products")
+)
+
+ggplot() +
+  geom_tile(
+    data = non_tariffed,
+    aes(x = x, y = y),
+    fill = "grey",
+    color = "white",
+    width = 0.9,
+    height = 0.9
+  ) +
+  geom_tile(
+    data = full_tariffed,
+    aes(x = x, y = y),
+    fill = "lightblue",
+    color = "white",
+    width = 0.9,
+    height = 0.9
+  ) +
+  geom_tile(
+    data = partial_cell,
+    aes(x = x, y = y),
+    fill = "grey",
+    color = "white",
+    width = 0.9,
+    height = 0.9
+  ) +
+  geom_rect(
+    data = partial_cell,
+    aes(
+      xmin = x - 0.45,
+      xmax = x - 0.45 + (0.9 * fill_amount),
+      ymin = y - 0.45,
+      ymax = y + 0.45
+    ),
+    fill = "lightblue",
+    color = NA
+  ) +
+  geom_tile(
+    data = legend_df,
+    aes(x = x, y = y, fill = category),
+    width = 0.9,
+    height = 0.9
+  ) +
+  scale_fill_manual(
+    name = NULL,
+    values = c(
+      "Tariffed Products" = "lightblue",
+      "Non-Tariffed Products" = "grey"
+    )
+  ) +
+  coord_equal() +
+  labs(
+    title = "Distribution of Tariffed vs Non-Tariffed Products (HS8)",
+    subtitle = sprintf("%.1f%% Tariffed", TariffedProductsProp),
+    x = "Disseminated on May 3rd, 2024\nNote: All products without coverage were excluded from calculation\n",
+    tag = "Source: World Trade Organization's (WTO) Consolidated Tariff Schedule (CTS)"
+  ) +
+  theme_ipsum_es() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    plot.tag = element_text(hjust = 0),
+    plot.tag.position = "bottom",
+    axis.text = element_blank(),
+    axis.title.y = element_blank(),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    legend.position = "top",
+    legend.justification = "left",
+    legend.direction = "horizontal"
+  )
+```
+
+In total, a total of 21.8% of all products traded by Canada had duties imposed on them.
+
+## So, What's the Rate?
+
+```{r}
+TariffRate <- CATimeline %>%
+  mutate(
+    Date = as.Date(Date),
+    `Weighted Tariff Burden` = `Trade weighted average tariff rate (in percent)` * 100,
+    label = paste0(
+      format(Date, "%b %d"),
+      "\n",
+      sprintf("%.2f", `Weighted Tariff Burden`), 
+      "%"
+    )
+  )
+
+date_min <- min(TariffRate$Date, na.rm = TRUE)
+date_max <- max(TariffRate$Date, na.rm = TRUE)
+
+TariffPlot <- TariffRate %>%
+  ggplot(
+    aes(
+      x = Date,
+      group = 1
+    ) 
+  ) +
+  geom_line(
+    aes(
+      y = `Weighted Tariff Burden`,
+      color = "Trade Weighted Average Tariff Burden"
+    ),
+    linewidth = 1.2
+  ) +
+  geom_point(
+    aes(
+      y = `Weighted Tariff Burden`,
+      color = "Trade Weighted Average Tariff Burden"
+    ),
+    size = 2
+  ) +
+  geom_ribbon(
+    aes(
+      ymin = 0,
+      ymax = `Weighted Tariff Burden`, 
+      fill = "Area"
+    ),
+    alpha = 0.05,
+    show.legend = FALSE
+  ) +
+  scale_color_manual(
+    name = NULL,
+    values = c(
+      "Trade Weighted Average Tariff Burden" = "#0047AB"
+    )
+  ) +
+  scale_fill_manual(
+    name = NULL,
+    values = c("Area" = "#0056b3")
+  ) +
+  scale_x_date(
+    date_breaks = "1 month",
+    date_labels = "%b",
+    limits = c(
+      floor_date(date_min, "month"),
+      ceiling_date(date_max -1,  "month")
+      )
+    ) +
+  scale_y_continuous(
+    labels = scales::percent_format(scale = 1),
+    limits = c(NA, 10)
+  ) +
+  labs(
+    title = "Trade Weighted Average Tariff Burden, Canada (2025)",
+    x = "Date",
+    y = "Weighted Average Trade Burden (per cent)",
+    tag = "Source: World Trade Organization, UN Comtrade"
+  ) +
+  theme_ipsum_es() +
+  theme(
+    axis.text.x = element_text(angle = 0),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    plot.tag.position = "bottom",
+    plot.tag = element_text(hjust = 0),
+    legend.position = "top",
+    legend.justification = "left",
+    legend.direction = "horizontal"
+  )
+TariffPlot
+```
+
+
+With the imposition of the tariffs, the effective simple average tariff rate would have peaked at around 5.76%. However, the simple average tariff calculation applies on all products weighted equally. That does not provide a comprehensive picture of what the effective tariff rate is on the basis of what Canada actually trades. Therefore, we use the Trade-Weighted Average Tariff Rate in our analysis, which was 6.62% at its peak between March 9th and August 31st [@WTO_TariffActions_ReporterC124_C840].
+
+## Affected Trade Value
+
+```{r}
+AffectedTradePlot <- CATimeline %>%
+  mutate(
+    Date = as.Date(Date),
+    `Trade Value (USD)` = `Affected trade value (in USD)` / 1e6,
+    label = paste0(
+      format(Date, "%b %d"),
+      sprintf("%.1f", `Trade Value (USD)`)
+    )
+  ) %>%
+  ggplot(
+    aes(
+      x = Date,
+      group = 1
+    ) 
+  ) +
+  geom_line(
+    aes(
+      y = `Trade Value (USD)`,
+      color = "Trade Value"
+    ),
+    linewidth = 1.2
+  ) +
+  geom_point(
+    aes(
+      y = `Trade Value (USD)`,
+      color = "Trade Value"
+    ),
+    size = 2
+  ) +
+  geom_ribbon(
+    aes(
+      ymin = 0,
+      ymax = `Trade Value (USD)`, 
+      fill = "Area"
+    ),
+    alpha = 0.05,
+    show.legend = FALSE
+  ) +
+  scale_x_date(
+    date_breaks = "1 month",
+    date_labels = "%b",
+    limits = c(
+      floor_date(date_min, "month"),
+      ceiling_date(date_max -1,  "month")
+      )
+    ) +
+  scale_color_manual(
+    name = NULL,
+    values = c(
+      "Trade Value" = "#0047AB"
+    )
+  ) +
+  scale_fill_manual(
+    name = NULL,
+    values = c("Area" = "#0056b3")
+  ) +
+  labs(
+    title = "Affected Trade Value, Canada (2025)",
+    subtitle = "in millions of dollars (USD)",
+    x = "Date",
+    y = "Trade Value (USD)",
+    tag = "Source: World Trade Organization, UN Comtrade",
+    caption = "Note: The `affected trade value` is an estimate, applying current tariff actions to latest available import data, which are often the previous year."
+  ) +
+  scale_y_continuous(
+    labels = scales::comma
+  ) +
+  theme_ipsum_es() +
+  theme(
+    axis.text.x = element_text(angle = 0),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    plot.tag.position = "bottom",
+    plot.tag = element_text(hjust = 0),
+    legend.position = "top",
+    legend.justification = "left",
+    legend.direction = "horizontal"
+  )
+
+AffectedTradePlot
+```
+
+
+As a result of the tariff imposition, a maximum of 69.64 billion dollars (USD) worth of products were subject to impact [@WTO_TariffActions_ReporterC124_C840].
+
+# So, What's the Impact?
+
+## Total Merchandise Trade
+
+```{r}
+
+TradeByIndustry <- read_csv('datasets/TradeByIndustry.csv')
+TradeByIndustry <- TradeByIndustry %>%
+  mutate(
+    Import = as.numeric(Import),
+    Export = as.numeric(Export)
+  )
+
+TBI_Total <- TradeByIndustry %>%
+  mutate(
+    Date = my(Date),
+    Year = year(Date),
+    Month = month(
+      Date,
+      label = TRUE,
+      abbr = TRUE
+    ),
+    Import_Plot = -Import,
+    Net_Trade = Export - Import,
+    Total_Exports = Export,
+    Total_Imports = Import
+  ) %>%
+  filter(
+    Title == "Total of all merchandise"
+  )
+
+current_months <- TBI_Total %>%
+  filter(Year == 2025) %>%
+  pull(Month) %>%
+  unique()
+
+TBITotalPlot <- ggplot() +
+  geom_col(
+    data = filter(
+      TBI_Total, 
+      Year == 2025),
+    aes(
+      x = Month, 
+      y = Export, 
+      fill = "2025 Exports"
+      ),
+    width = 0.7, 
+    alpha = 1
+  ) +
+  geom_col(
+    data = filter(
+      TBI_Total, 
+      Year == 2025
+      ),
+    aes(
+      x = Month, 
+      y = Import_Plot, 
+      fill = "2025 Imports"
+      ),
+    width = 0.7, 
+    alpha = 1
+  ) +
+  geom_point(
+    data = filter(
+      TBI_Total, 
+      Year == 2025
+      ),
+    aes(
+      x = Month, 
+      y = Net_Trade, 
+      fill = "Net Trade"
+    ),
+    color = 'white',
+    size = 9,
+    shape = 18
+  ) +
+  geom_point(
+    data = filter(
+      TBI_Total, 
+      Year == 2025
+      ),
+    aes(
+      x = Month,
+      y = Net_Trade,
+      fill = "Net Trade"
+    ),
+    color = '#D27D2D',
+    size = 4,
+    shape = 23
+  ) +
+  geom_line(
+    data = filter(
+      TBI_Total, 
+      Year == 2024
+      ),
+    aes(
+      x = Month, 
+      y = Export, 
+      color = "2024 Exports", 
+      group = 1
+      ),
+    linewidth = 1,
+    linetype = "dotted"
+  ) +
+  geom_line(
+    data = filter(
+      TBI_Total, 
+      Year == 2024
+      ),
+    aes(
+      x = Month, 
+      y = Import_Plot, 
+      color = "2024 Imports", 
+      group = 1
+      ),
+    linewidth = 1,
+    linetype = "dotted"
+  ) +
+  geom_hline(
+    yintercept = 0,
+    color = "black",
+    linewidth = 0.5
+  ) +
+  scale_x_discrete(
+    limits = current_months
+  ) +
+  scale_fill_manual(
+    name = NULL,
+    values = c(
+      "2025 Exports" = "#169982", 
+      "2025 Imports" = "#EB414D", 
+      "Net Trade" = "#D27D2D"
+      )
+  ) +
+  scale_color_manual(
+    name = NULL,
+    values = c(
+      "2024 Exports" = "#0D5C4E", 
+      "2024 Imports" = "#8F272F"
+      ) 
+  ) +
+  guides(
+    fill = guide_legend(
+      order = 1, 
+      keyheight = unit(0.5, "cm"),
+      keywidth = unit(0.8, "cm")
+    ),
+    color = guide_legend(
+      order = 2, 
+      keyheight = unit(0.9, "cm"),
+      keywidth = unit(1.2, "cm"),
+      override.aes = list(linetype = "dotted", linewidth = 1.5)
+    )
+  ) +
+  labs(
+    title = "Canada's International Merchandise Balance of Trade (2024, 2025)",
+    subtitle = "Total of All Merchandise\nin millions of dollars (CAD)",
+    x = NULL,
+    y = "Trade Value (CAD)",
+    tag = "Source: Statistics Canada",
+    caption = "Net Trade = Exports - Imports"
+  ) +
+  scale_y_continuous(
+    labels = function(x) scales::comma(abs(x))
+  ) +
+  theme_ipsum_es() +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    plot.tag.position = "bottom",
+    plot.tag = element_text(hjust = 0),
+    legend.position = "top",
+    legend.justification = "left",
+    legend.direction = "horizontal"
+  )
+
+TBITotalPlot
+```
+
+
+The impact of the March tariffs is clearly visible in the dip in both imports and exports from March to April. Exports shrunk by 75.65 (rounded) billion dollars (CAD), whereas Imports shrunk by 22.08 (rounded) billion dollars (CAD) from March to April. The recession in total exports exceeded the recession in imports by over 3 times as much, resulting in the trade deficit widening by 53.566 billion dollars (CAD). Export levels for 2025, when compared to export levels from 2024, on a monthly basis, have yet to make a recovery [@StatCan_1210001101_AllCountries].
+
+
+## Bilateral Trade with the US in 2025
+
+```{r}
+
+US_Imports2025 <- TradeBalance2025 %>%
+  filter(
+    Country == "United States",
+    !is.na(`Export`),
+    !is.na(`Import`)
+  ) %>%
+  mutate(
+    Date = mdy(Date),
+    Month = month(
+      Date,
+      label = TRUE,
+      abbr = TRUE
+    )
+  )
+
+USImports2025Total <- sum(US_Imports$Import)
+USExports2025Total <- sum(US_Imports$Export)
+
+BilateralPlot <- US_Imports2025 %>%
+  ggplot(
+    aes(
+      x = Month,
+      group = 1
+    ) 
+  ) +
+  geom_line(
+    aes(
+      y = Export,
+      color = "Import of Canadian Goods By the US"
+    ),
+    linewidth = 1.2
+  ) +
+  geom_line(
+    aes(
+      y = Import,
+      color = "Import of US Goods By Canada"
+    ),
+    linewidth = 1.2
+  ) +
+  geom_point(
+    aes(
+      y = Export,
+      color = "Import of Canadian Goods By the US"
+    ),
+    size = 2
+  ) +
+  geom_point(
+    aes(
+      y = Import,
+      color = "Import of US Goods By Canada"
+    ),
+    size = 2
+  ) +
+  geom_ribbon(
+    aes(
+      ymin = Import,
+      ymax = Export,
+      fill = "Balance Surplus"
+    ),
+    alpha = 0.05
+  ) +
+  scale_color_manual(
+    name = NULL,
+    values = c(
+      "Import of Canadian Goods By the US" = "#169982",
+      "Import of US Goods By Canada" = "#EB414D"
+    )
+  ) +
+    scale_fill_manual(
+      name = NULL,
+      values = c("Balance Surplus" = "#169982")
+    ) +
+  labs(
+    title = "Canada-US Bilateral Imports (2025)",
+    subtitle = "in millions of dollars (CAD)",
+    x = "Month",
+    y = "Trade Value (CAD)",
+    tag = "Source: Statistics Canada"
+    ) +
+  scale_y_continuous(
+    labels = scales::comma
+  ) +
+  theme_ipsum_es() +
+  theme(
+    axis.text.x = element_text(angle = 0),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    plot.tag.position = "bottom",
+    plot.tag = element_text(hjust = 0),
+    legend.position = "top",
+    legend.justification = "left",
+    legend.direction = "horizontal"
+  )
+
+BilateralPlot
+```
+
+
+Drilling down on the trade statistics for Canada and the United States, we can notice a couple of things. Despite the application of tariffs in March, Canadian imports to the United States were on a consistent, downward trajectory since January. Between January and March, the average arc percentage change was -33.46%. This arc percentage change jumped to -73.84% between March and April, 2.21 times larger than the average arc between January and March. [@StatCan_1210001101_USOnly]. This is over double change in rate is indicative of the impact that tariffs have had on the bilateral trade relationship between Canada and the United States 
+
+## Trade by Selective Commmodity Component
+
+### Iron and Steel
+
+```{r}
+TBI_Steel <- TradeByIndustry %>%
+  mutate(
+    Date = my(Date),
+    Year = year(Date),
+    Month = month(
+      Date,
+      label = TRUE,
+      abbr = TRUE
+    ),
+    Import_Plot = -Import,
+    Net_Trade = Export - Import,
+    Total_Exports = Export,
+    Total_Imports = Import
+  ) %>%
+  filter(
+    Title == "Basic and semi-finished iron or steel products"
+  )
+
+current_months <- TBI_Steel %>%
+  filter(Year == 2025) %>%
+  pull(Month) %>%
+  unique()
+
+TBISteelPlot <- ggplot() +
+  geom_col(
+    data = filter(
+      TBI_Steel, 
+      Year == 2025),
+    aes(
+      x = Month, 
+      y = Export, 
+      fill = "2025 Exports"
+      ),
+    width = 0.7, 
+    alpha = 1
+  ) +
+  geom_col(
+    data = filter(
+      TBI_Steel, 
+      Year == 2025
+      ),
+    aes(
+      x = Month, 
+      y = Import_Plot, 
+      fill = "2025 Imports"
+      ),
+    width = 0.7, 
+    alpha = 1
+  ) +
+  geom_point(
+    data = filter(
+      TBI_Steel, 
+      Year == 2025
+      ),
+    aes(
+      x = Month, 
+      y = Net_Trade, 
+      fill = "Net Trade"
+    ),
+    color = 'white',
+    size = 9,
+    shape = 18
+  ) +
+  geom_point(
+    data = filter(
+      TBI_Steel, 
+      Year == 2025
+      ),
+    aes(
+      x = Month,
+      y = Net_Trade,
+      fill = "Net Trade"
+    ),
+    color = '#D27D2D',
+    size = 4,
+    shape = 23
+  ) +
+  geom_line(
+    data = filter(
+      TBI_Steel, 
+      Year == 2024
+      ),
+    aes(
+      x = Month, 
+      y = Export, 
+      color = "2024 Exports", 
+      group = 1
+      ),
+    linewidth = 1,
+    linetype = "dotted"
+  ) +
+  geom_line(
+    data = filter(
+      TBI_Steel, 
+      Year == 2024
+      ),
+    aes(
+      x = Month, 
+      y = Import_Plot, 
+      color = "2024 Imports", 
+      group = 1
+      ),
+    linewidth = 1,
+    linetype = "dotted"
+  ) +
+  geom_hline(
+    yintercept = 0,
+    color = "black",
+    linewidth = 0.5
+  ) +
+  scale_x_discrete(
+    limits = current_months
+  ) +
+  scale_fill_manual(
+    name = NULL,
+    values = c(
+      "2025 Exports" = "#169982", 
+      "2025 Imports" = "#EB414D", 
+      "Net Trade" = "#D27D2D"
+      )
+  ) +
+  scale_color_manual(
+    name = NULL,
+    values = c(
+      "2024 Exports" = "#0D5C4E", 
+      "2024 Imports" = "#8F272F"
+      ) 
+  ) +
+    guides(
+    fill = guide_legend(
+      order = 1, 
+      keyheight = unit(0.5, "cm"),
+      keywidth = unit(0.8, "cm")
+    ),
+    color = guide_legend(
+      order = 2, 
+      keyheight = unit(0.9, "cm"),
+      keywidth = unit(1.2, "cm"),
+      override.aes = list(linetype = "dotted", linewidth = 1.5)
+    )
+  ) +
+  labs(
+    title = "Canada's International Merchandise Balance of Trade (2024, 2025)",
+    subtitle = "Basic and Semi-finished Iron or Steel Products\nin millions of dollars (CAD), Seasonally Adjusted",
+    x = NULL,
+    y = "Trade Value (CAD)",
+    tag = "Source: Statistics Canada",
+    caption = "Net Trade = Exports - Imports\nNote: The data shown is the totalled for all trading partners and is not exclusive to trade with the United States.\n"
+  ) +
+  scale_y_continuous(
+    labels = function(x) scales::comma(abs(x))
+  ) +
+  theme_ipsum_es() +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    plot.tag.position = "bottom",
+    plot.tag = element_text(hjust = 0),
+    legend.position = "top",
+    legend.justification = "left",
+    legend.direction = "horizontal"
+  )
+
+TBISteelPlot
+```
+
+
+Looking at the unprotected iron and steel industry, we can see that imports and exports have both suffered a significant decline since the start of the year, when compared to the previous year. Between January and March, iron and steel exports have declined at an average arc percentage of -11.35%. Between March and April, the average arc percentage change increased to -12.49%. From January to August, exports have been declining at an average arc percentage of -8.12%. Imports of iron and steel products to Canada, on the other hand, have been fluctuating. Between January and March, the imports have declined at a non-absolute average arc percentage of -0.53%. From March to April, this declined widened to -9.70%.  For the year, imports of iron and steel products have declined at an average arc percentage of -2.10%.  Iron and Steel trade has, as a result, maintained a continuous trade deficit from January through August. This data indicates that, despite the tariffs having an impact on the iron and steel industry, there may be exogenous factors that are affecting the imports of iron and steel. However, we can conclude that exports are not being affected by the same exogenous factors [@StatCan_1210016301_AllCountries_SelectiveCommodity].
+
+### Aluminium
+
+```{r}
+TBI_Aluminum <- TradeByIndustry %>%
+  mutate(
+    Date = my(Date),
+    Year = year(Date),
+    Month = month(
+      Date,
+      label = TRUE,
+      abbr = TRUE
+    ),
+    Total_Exports = Export,
+    Total_Imports = Import
+  ) %>%
+  filter(
+    Title %in% c("Basic and semi-finished products of aluminum and aluminum alloys", "Unwrought aluminum and aluminum alloys"
+    )
+  ) %>%
+  group_by(
+    Year, 
+    Month, 
+    Date
+    ) %>%
+  summarize(
+    Export = sum(Export, na.rm = TRUE),
+    Import = sum(Import, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    Import_Plot = -Import,
+    Net_Trade = Export - Import
+  )
+
+current_months <- TBI_Aluminum %>%
+  filter(Year == 2025) %>%
+  pull(Month) %>%
+  unique()
+
+TBIAluminumPlot <- ggplot() +
+  geom_col(
+    data = filter(
+      TBI_Aluminum, 
+      Year == 2025),
+    aes(
+      x = Month, 
+      y = Export, 
+      fill = "2025 Exports"
+      ),
+    width = 0.7, 
+    alpha = 1
+  ) +
+  geom_col(
+    data = filter(
+      TBI_Aluminum, 
+      Year == 2025
+      ),
+    aes(
+      x = Month, 
+      y = Import_Plot, 
+      fill = "2025 Imports"
+      ),
+    width = 0.7, 
+    alpha = 1
+  ) +
+  geom_point(
+    data = filter(
+      TBI_Aluminum, 
+      Year == 2025
+      ),
+    aes(
+      x = Month, 
+      y = Net_Trade, 
+      fill = "Net Trade"
+    ),
+    color = 'white',
+    size = 9,
+    shape = 18
+  ) +
+  geom_point(
+    data = filter(
+      TBI_Aluminum, 
+      Year == 2025
+      ),
+    aes(
+      x = Month,
+      y = Net_Trade,
+      fill = "Net Trade"
+    ),
+    color = '#D27D2D',
+    size = 4,
+    shape = 23
+  ) +
+  geom_line(
+    data = filter(
+      TBI_Aluminum, 
+      Year == 2024
+      ),
+    aes(
+      x = Month, 
+      y = Export, 
+      color = "2024 Exports", 
+      group = 1
+      ),
+    linewidth = 1,
+    linetype = "dotted"
+  ) +
+  geom_line(
+    data = filter(
+      TBI_Aluminum, 
+      Year == 2024
+      ),
+    aes(
+      x = Month, 
+      y = Import_Plot, 
+      color = "2024 Imports", 
+      group = 1
+      ),
+    linewidth = 1,
+    linetype = "dotted"
+  ) +
+  geom_hline(
+    yintercept = 0,
+    color = "black",
+    linewidth = 0.5
+  ) +
+  scale_x_discrete(
+    limits = current_months
+  ) +
+  scale_fill_manual(
+    name = NULL,
+    values = c(
+      "2025 Exports" = "#169982", 
+      "2025 Imports" = "#EB414D", 
+      "Net Trade" = "#D27D2D"
+      )
+  ) +
+  scale_color_manual(
+    name = NULL,
+    values = c(
+      "2024 Exports" = "#0D5C4E", 
+      "2024 Imports" = "#8F272F"
+      ) 
+  ) +
+    guides(
+    fill = guide_legend(
+      order = 1, 
+      keyheight = unit(0.5, "cm"),
+      keywidth = unit(0.8, "cm")
+    ),
+    color = guide_legend(
+      order = 2, 
+      keyheight = unit(0.9, "cm"),
+      keywidth = unit(1.2, "cm"),
+      override.aes = list(linetype = "dotted", linewidth = 1.5)
+    )
+  ) +
+  labs(
+    title = "Canada's International Merchandise Balance of Trade (2024, 2025)",
+    subtitle = "Unwrought Aluminum and Aluminum Alloys\nBasic and Semi-finished Products of Aluminum and Aluminum Alloys\nin millions of dollars (CAD), Seasonally Adjusted",
+    x = NULL,
+    y = "Trade Value (CAD)",
+    tag = "Source: Statistics Canada",
+    caption = "Net Trade = Exports - Imports\nNote: The data shown is the totalled for all trading partners and is not exclusive to trade with the United States.\n"
+  ) +
+  scale_y_continuous(
+    labels = function(x) scales::comma(abs(x))
+  ) +
+  theme_ipsum_es() +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    plot.tag.position = "bottom",
+    plot.tag = element_text(hjust = 0),
+    legend.position = "top",
+    legend.justification = "left",
+    legend.direction = "horizontal"
+  )
+
+TBIAluminumPlot
+```
+
+Data on aluminum trade shows us the largest impact of tariffs on Canadian trade statistics. Between January and March, exports of aluminum increased at an average arc percentage change of 12.54%. However, once the March tariffs went into effect, between March and April, the arc percentage change for exports declined sharply by -30.89%. In June, when the tariffs were doubled, the arc percentage change of exports dipped by -10.18% between May and June and continued declining by -29.31% from June to July. In total, aluminum suffered an average arc percentage change of -19.97% in exports. For imports, we see that between January and March, imports increased at an average rate of 14.91%. This changed after the March tariffs went into effect, between March and April, the arc percentage change for imports declined by -8.26%, but recovered between May and June by +16.47%. After the tariff rate was doubled in June, imports of aluminum declined by -6.07 between June and July. In total, aluminum imports saw an average arc percentage increase of 7.43%, with imports following relatively close to the 2024 import trend. This suggests that there may be seasonal domestic, cross-industry demand for aluminum imports   [@StatCan_1210016301_AllCountries_SelectiveCommodity].
+
+### Copper
+
+```{r}
+TBI_Copper <- TradeByIndustry %>%
+  mutate(
+    Date = my(Date),
+    Year = year(Date),
+    Month = month(
+      Date,
+      label = TRUE,
+      abbr = TRUE
+    ),
+    Total_Exports = Export,
+    Total_Imports = Import
+  ) %>%
+  filter(
+    Title %in% c("Copper ores and concentrates", "Unwrought copper and copper alloys"
+    )
+  ) %>%
+  group_by(
+    Year, 
+    Month, 
+    Date
+    ) %>%
+  summarize(
+    Export = sum(Export, na.rm = TRUE),
+    Import = sum(Import, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    Import_Plot = -Import,
+    Net_Trade = Export - Import
+  )
+
+current_months <- TBI_Copper %>%
+  filter(Year == 2025) %>%
+  pull(Month) %>%
+  unique()
+
+TBICopperPlot <- ggplot() +
+  geom_col(
+    data = filter(
+      TBI_Copper, 
+      Year == 2025),
+    aes(
+      x = Month, 
+      y = Export, 
+      fill = "2025 Exports"
+      ),
+    width = 0.7, 
+    alpha = 1
+  ) +
+  geom_col(
+    data = filter(
+      TBI_Copper, 
+      Year == 2025
+      ),
+    aes(
+      x = Month, 
+      y = Import_Plot, 
+      fill = "2025 Imports"
+      ),
+    width = 0.7, 
+    alpha = 1
+  ) +
+  geom_point(
+    data = filter(
+      TBI_Copper, 
+      Year == 2025
+      ),
+    aes(
+      x = Month, 
+      y = Net_Trade, 
+      fill = "Net Trade"
+    ),
+    color = 'white',
+    size = 9,
+    shape = 18
+  ) +
+  geom_point(
+    data = filter(
+      TBI_Copper, 
+      Year == 2025
+      ),
+    aes(
+      x = Month,
+      y = Net_Trade,
+      fill = "Net Trade"
+    ),
+    color = '#D27D2D',
+    size = 4,
+    shape = 23
+  ) +
+  geom_line(
+    data = filter(
+      TBI_Copper, 
+      Year == 2024
+      ),
+    aes(
+      x = Month, 
+      y = Export, 
+      color = "2024 Exports", 
+      group = 1
+      ),
+    linewidth = 1,
+    linetype = "dotted"
+  ) +
+  geom_line(
+    data = filter(
+      TBI_Copper, 
+      Year == 2024
+      ),
+    aes(
+      x = Month, 
+      y = Import_Plot, 
+      color = "2024 Imports", 
+      group = 1
+      ),
+    linewidth = 1,
+    linetype = "dotted"
+  ) +
+  geom_hline(
+    yintercept = 0,
+    color = "black",
+    linewidth = 0.5
+  ) +
+  scale_x_discrete(
+    limits = current_months
+  ) +
+  scale_fill_manual(
+    name = NULL,
+    values = c(
+      "2025 Exports" = "#169982", 
+      "2025 Imports" = "#EB414D", 
+      "Net Trade" = "#D27D2D"
+      )
+  ) +
+  scale_color_manual(
+    name = NULL,
+    values = c(
+      "2024 Exports" = "#0D5C4E", 
+      "2024 Imports" = "#8F272F"
+      ) 
+  ) +
+    guides(
+    fill = guide_legend(
+      order = 1, 
+      keyheight = unit(0.5, "cm"),
+      keywidth = unit(0.8, "cm")
+    ),
+    color = guide_legend(
+      order = 2, 
+      keyheight = unit(0.9, "cm"),
+      keywidth = unit(1.2, "cm"),
+      override.aes = list(linetype = "dotted", linewidth = 1.5)
+    )
+  ) +
+  labs(
+    title = "Canada's International Merchandise Balance of Trade (2024, 2025)",
+    subtitle = "Copper Ores and Concentrates\nUnwrought Copper and Copper Alloys\nin millions of dollars (CAD), Seasonally Adjusted",
+    x = NULL,
+    y = "Trade Value (CAD)",
+    tag = "Source: Statistics Canada",
+    caption = "Net Trade = Exports - Imports"
+  ) +
+  scale_y_continuous(
+    labels = function(x) scales::comma(abs(x))
+  ) +
+  theme_ipsum_es() +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    plot.tag.position = "bottom",
+    plot.tag = element_text(hjust = 0),
+    legend.position = "top",
+    legend.justification = "left",
+    legend.direction = "horizontal"
+  )
+
+TBICopperPlot
+
+```
+
+
+The copper tariffs went into place in August, therefore, the only period for which we can conclusively say we have evidence of impact is from the August period alone. However, the announcement for the copper tariffs were made earlier in June, causing price hikes on the commodity, and an eventual price crash right before the tariffs went into effect [@CNN_CopperPrices_US_Market_Tariffs_2025; @TradingEconomics_Copper]. These news-manipulated forward-looking price actions introduce significant endogeneity into the volume of copper traded and must, therefore, causality must be ruled out and the data must be interpreted with caution. Between July and August, exports of copper declined by -31.67%. Imports, additionally, declined by -31.72% [@StatCan_1210016301_AllCountries_SelectiveCommodity].
+
+
+### Medium and Heavy Vehicles, Autoparts
+
+```{r}
+TBI_Vehicle <- TradeByIndustry %>%
+  mutate(
+    Date = my(Date),
+    Year = year(Date),
+    Month = month(
+      Date,
+      label = TRUE,
+      abbr = TRUE
+    ),
+    Total_Exports = Export,
+    Total_Imports = Import
+  ) %>%
+  filter(
+    Title %in% c("Medium and heavy trucks, buses, and other motor vehicles", "Tires; motor vehicle engines and motor vehicle parts"
+    )
+  ) %>%
+  group_by(
+    Year, 
+    Month, 
+    Date
+    ) %>%
+  summarize(
+    Export = sum(Export, na.rm = TRUE),
+    Import = sum(Import, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    Import_Plot = -Import,
+    Net_Trade = Export - Import
+  )
+
+current_months <- TBI_Vehicle %>%
+  filter(Year == 2025) %>%
+  pull(Month) %>%
+  unique()
+
+TBIVehiclePlot <- ggplot() +
+  geom_col(
+    data = filter(
+      TBI_Vehicle, 
+      Year == 2025),
+    aes(
+      x = Month, 
+      y = Export, 
+      fill = "2025 Exports"
+      ),
+    width = 0.7, 
+    alpha = 1
+  ) +
+  geom_col(
+    data = filter(
+      TBI_Vehicle, 
+      Year == 2025
+      ),
+    aes(
+      x = Month, 
+      y = Import_Plot, 
+      fill = "2025 Imports"
+      ),
+    width = 0.7, 
+    alpha = 1
+  ) +
+  geom_point(
+    data = filter(
+      TBI_Vehicle, 
+      Year == 2025
+      ),
+    aes(
+      x = Month, 
+      y = Net_Trade, 
+      fill = "Net Trade"
+    ),
+    color = 'white',
+    size = 9,
+    shape = 18
+  ) +
+  geom_point(
+    data = filter(
+      TBI_Vehicle, 
+      Year == 2025
+      ),
+    aes(
+      x = Month,
+      y = Net_Trade,
+      fill = "Net Trade"
+    ),
+    color = '#D27D2D',
+    size = 4,
+    shape = 23
+  ) +
+  geom_line(
+    data = filter(
+      TBI_Vehicle, 
+      Year == 2024
+      ),
+    aes(
+      x = Month, 
+      y = Export, 
+      color = "2024 Exports", 
+      group = 1
+      ),
+    linewidth = 1,
+    linetype = "dotted"
+  ) +
+  geom_line(
+    data = filter(
+      TBI_Vehicle, 
+      Year == 2024
+      ),
+    aes(
+      x = Month, 
+      y = Import_Plot, 
+      color = "2024 Imports", 
+      group = 1
+      ),
+    linewidth = 1,
+    linetype = "dotted"
+  ) +
+  geom_hline(
+    yintercept = 0,
+    color = "black",
+    linewidth = 0.5
+  ) +
+  scale_x_discrete(
+    limits = current_months
+  ) +
+  scale_fill_manual(
+    name = NULL,
+    values = c(
+      "2025 Exports" = "#169982", 
+      "2025 Imports" = "#EB414D", 
+      "Net Trade" = "#D27D2D"
+      )
+  ) +
+  scale_color_manual(
+    name = NULL,
+    values = c(
+      "2024 Exports" = "#0D5C4E", 
+      "2024 Imports" = "#8F272F"
+      ) 
+  ) +
+    guides(
+    fill = guide_legend(
+      order = 1, 
+      keyheight = unit(0.5, "cm"),
+      keywidth = unit(0.8, "cm")
+    ),
+    color = guide_legend(
+      order = 2, 
+      keyheight = unit(0.9, "cm"),
+      keywidth = unit(1.2, "cm"),
+      override.aes = list(linetype = "dotted", linewidth = 1.5)
+    )
+  ) +
+  labs(
+    title = "Canada's International Merchandise Balance of Trade (2024, 2025)",
+    subtitle = "Medium and Heavy Trucks, Buses, and Other Motor Vehicles\nTires; Motor Vehicle Engines and Motor Vehicle Parts\nin millions of dollars (CAD), Seasonally Adjusted",
+    x = NULL,
+    y = "Trade Value (CAD)",
+    tag = "Source: Statistics Canada",
+    caption = "Net Trade = Exports - Imports"
+  ) +
+  scale_y_continuous(
+    labels = function(x) scales::comma(abs(x))
+  ) +
+  theme_ipsum_es() +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    plot.tag.position = "bottom",
+    plot.tag = element_text(hjust = 0),
+    legend.position = "top",
+    legend.justification = "left",
+    legend.direction = "horizontal"
+  )
+
+TBIVehiclePlot
+
+```
+
+
+Data on vehicles and auto parts shows that there has been minimal impact on the auto industry behest of the tariffs. Bilateral tariffs applied on vehicle imports in April show a slight decline in both exports and imports of vehicles and auto parts for the same month. Additionally, June saw an anomalous dip in imports despite no additional tariff actions being applied on American vehicle imports by Canada, as well as the import data not following the 2024 trend like the remainder of the year, suggesting presence of exogenous factors impacting trade statistics [@StatCan_1210016301_AllCountries_SelectiveCommodity].
+
+# Conclusion
+
+The 2025 tariff cycle clearly introduced significant friction into the historically flourishing bilateral trade relationship. This analysis confirms a sharp disruption in total merchandise trade, evidenced by a substantial dip in both imports and exports immediately following the initial March tariffs. The widening of the trade deficit between March and April highlights the disproportionate impact on Canadian exports which contracted a rate three times higher than imports. While Canada ultimately dropped its March counter-tariffs in September, maintaining only those on steel, aluminum and auto parts, the initial months demonstrate the severe vulnerability of key Canadian industries to U.S. protectionist policies. Additional data is required to analyze the delayed impact of this tariff cycle on Canadian trade for the year.
